@@ -7,6 +7,7 @@ import { CountdownTimer } from '../CountDown';
 import desktopHeader from '/public/assets/desktop-header.jpg';
 import mobileHeader from '/public/assets/mobile-header.jpg';
 import { useContext } from 'react';
+import { SiteConfig } from '../../config';
 
 type Props = {
 	timer: {
@@ -36,7 +37,7 @@ export default function Header(props: Props) {
 				<OurWeddingContainer>
 					<Title>{header.title}</Title>
 					<Subtitle>{header.subtitle}</Subtitle>
-					<Date>13 September 2023</Date>
+					<Date>{SiteConfig.date.formatted}</Date>
 				</OurWeddingContainer>
 				<Liner>{''}</Liner>
 				<CountdownTimer timer={timer} />

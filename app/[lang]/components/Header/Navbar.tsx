@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBarsStaggered } from '@fortawesome/pro-light-svg-icons';
 import MenuList from './MenuList';
 import { AppShellDataContext } from '../../../context/appShellData';
+import { SiteConfig } from '../../config';
 
 const Navbar = () => {
 	// const [menuActive, setMenuActive] = useState<boolean>(false);
@@ -15,13 +16,6 @@ const Navbar = () => {
 	const handleClickMenu = () => {
 		setMenuActive(!menuActive);
 	};
-
-	// useEffect(() => {
-	// 	const observer = new IntersectionObserver(([entry]) =>
-	// 		setIsVisible(entry.isIntersecting)
-	// 	);
-	// 	observer.observe(headerRef.current!);
-	// }, []);
 
 	useEffect(() => {
 		const checkIfScrolled = () => {
@@ -40,7 +34,12 @@ const Navbar = () => {
 
 	return (
 		<NavContainer isVisible={isVisible} ref={NavRef} menuActive={menuActive}>
-			<div style={{ marginLeft: 6, color: !isVisible ? 'white' : '#999' }}>
+			<div
+				style={{
+					marginLeft: 6,
+					color: !isVisible ? 'white' : SiteConfig.colors.secondary,
+				}}
+			>
 				SG
 			</div>
 			<FontAwesomeIcon
@@ -80,7 +79,7 @@ const NavContainer = styled.div<NavStyle>`
 		`
       		background-color: rgba(255, 255, 255, 0.1);
       		box-shadow: 0 3px 45px rgba(0, 0, 0, 0.15);
-	  		color: #999; 
+	  		color: ${SiteConfig.colors.secondary}; 
 		`}
 `;
 

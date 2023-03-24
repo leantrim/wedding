@@ -8,5 +8,18 @@
     "hours": "Hours",
     "minutes": "Minutes",
     "seconds": "Seconds"
+  },
+  "where": {
+    "title": "Where and when",
+    "ceremony": "Ceremony",
+    "celebration": "Celebration",
+    "buttonTitle": "Get Directions"
+  },
+  "menu": {
+    "whenAndWhere": "Where and when",
+    "rsvp": "RSVP",
+    "present": "Present",
+    "transport": "Transport",
+    "recommendations": "Recommendations"
   }
 }

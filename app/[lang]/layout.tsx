@@ -4,6 +4,7 @@ import '../globals.css';
 import { AppShellDataContextProvider } from '../context/appShellData';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { SiteConfig } from './config';
 config.autoAddCss = false;
 
 export async function getServerSideProps(context: any) {
@@ -35,7 +36,9 @@ export default async function Root({
 	return (
 		<html lang={params.lang} className={karla.className}>
 			<AppShellDataContextProvider>
-				<body>{children}</body>
+				<body style={{ backgroundColor: SiteConfig.colors.primary }}>
+					{children}
+				</body>
 			</AppShellDataContextProvider>
 		</html>
 	);

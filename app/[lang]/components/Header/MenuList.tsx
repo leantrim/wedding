@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { AppShellDataContext } from '../../../context/appShellData';
+import { SiteConfig } from '../../config';
+import { MenuProps } from '../../main';
 
 type SyleProps = {
 	index: number;
@@ -17,8 +19,11 @@ const fade = keyframes`
     opacity: 1;
   }
 `;
+type Props = {
+	menu: MenuProps;
+};
 
-const MenuList = () => {
+const MenuList = ({ menu }: Props) => {
 	const { menuActive, setMenuActive } = useContext(AppShellDataContext);
 
 	return (
@@ -29,11 +34,11 @@ const MenuList = () => {
 					<CloseContainer onClick={() => setMenuActive(false)}>
 						<CloseButton icon={faClose} />
 					</CloseContainer>
-					<StyledLink index={0}>when and where</StyledLink>
-					<StyledLink index={1}>RSVP</StyledLink>
-					<StyledLink index={2}>Present</StyledLink>
-					<StyledLink index={3}>Transport</StyledLink>
-					<StyledLink index={4}>Recommendations</StyledLink>
+					<StyledLink index={0}>{menu.whenAndWhere}</StyledLink>
+					<StyledLink index={1}>{menu.rsvp}</StyledLink>
+					<StyledLink index={2}>{menu.present}</StyledLink>
+					<StyledLink index={3}>{menu.transport}</StyledLink>
+					<StyledLink index={4}>{menu.recommendations}</StyledLink>
 				</Container>
 			)}
 			<MenuOverlay menuActive={menuActive} />
@@ -46,31 +51,11 @@ type MenuOverlayProps = {
 	isTop?: boolean;
 };
 
-const TopMenuOverlay = styled.div<MenuOverlayProps>`
-	position: fixed;
-	top: 0;
-	height: 48px;
-	background-color: #d6c9b6;
-	width: 100%;
-	opacity: ${(props) => (props.menuActive ? 1 : 0)};
-	transition: opacity 0.3s ease-in-out;
-`;
-
-const BottomMenuOverlay = styled.div<MenuOverlayProps>`
-	position: fixed;
-	bottom: 0;
-	height: 48px;
-	background-color: #d6c9b6;
-	width: 100%;
-	opacity: ${(props) => (props.menuActive ? 1 : 0)};
-	transition: opacity 0.3s ease-in-out;
-`;
-
 const MenuOverlay = styled.div<MenuOverlayProps>`
 	position: fixed;
 	${(props) => (props.isTop ? 'top: 0' : 'bottom: 0')};
 	height: 48px;
-	background-color: #d6c9b6;
+	background-color: ${SiteConfig.colors.primary};
 	width: 100%;
 	opacity: ${(props) => (props.menuActive ? 1 : 0)};
 	transition: opacity 0.3s ease-in-out;

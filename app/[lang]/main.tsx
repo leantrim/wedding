@@ -1,10 +1,14 @@
 'use client';
-import React, { useContext, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { AppShellDataContext } from '../context/appShellData';
 import Header from './components/Header/Header';
 import Navbar from './components/Header/Navbar';
-import WhenAndWhere from './WhenAndWhere';
+
+const WhenAndWhere = dynamic(
+	() => import('./components/WhenAndWhere/WhenAndWhere')
+);
 
 interface Props {
 	dictionary: {
@@ -18,8 +22,25 @@ interface Props {
 			title: string;
 			subtitle: string;
 		};
+		where: WhereProps;
+		menu: MenuProps;
 	};
 }
+
+export type MenuProps = {
+	whenAndWhere: string;
+	rsvp: string;
+	present: string;
+	transport: string;
+	recommendations: string;
+};
+
+export type WhereProps = {
+	title: string;
+	ceremony: string;
+	celebration: string;
+	buttonTitle: string;
+};
 
 const Main = (props: Props) => {
 	const { dictionary } = props;
@@ -34,7 +55,7 @@ const Main = (props: Props) => {
 		>
 			<Navbar />
 			<Header timer={dictionary.counter} header={dictionary.header} />
-			<WhenAndWhere />
+			<WhenAndWhere where={dictionary.where} />
 		</MainContainer>
 	);
 };

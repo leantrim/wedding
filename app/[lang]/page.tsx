@@ -12,7 +12,6 @@ export default async function IndexPage({
 	searchParams?: { [key: string]: string | string[] | undefined };
 }) {
 	const dictionary = await getDictionary(params.lang);
-	console.log(searchParams?.bypasspin);
 	const bypassPin = searchParams?.bypasspin === '42069';
 	return (
 		<>
@@ -20,7 +19,7 @@ export default async function IndexPage({
 				{bypassPin ? (
 					<div>
 						<Main dictionary={dictionary} />
-						<MenuList />
+						<MenuList menu={dictionary.menu} />
 					</div>
 				) : (
 					<div
