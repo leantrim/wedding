@@ -2,6 +2,7 @@
 import dynamic from 'next/dynamic';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { DictionaryTypes } from '../../types/DictionaryTypes';
 import { AppShellDataContext } from '../context/appShellData';
 import Header from './components/Header/Header';
 import Navbar from './components/Header/Navbar';
@@ -9,40 +10,10 @@ import Navbar from './components/Header/Navbar';
 const WhenAndWhere = dynamic(
 	() => import('./components/WhenAndWhere/WhenAndWhere')
 );
+const Rsvp = dynamic(() => import('./components/Rsvp/Rsvp'));
+const Present = dynamic(() => import('./components/Present/Present'));
 
-interface Props {
-	dictionary: {
-		counter: {
-			days: string;
-			hours: string;
-			minutes: string;
-			seconds: string;
-		};
-		header: {
-			title: string;
-			subtitle: string;
-		};
-		where: WhereProps;
-		menu: MenuProps;
-	};
-}
-
-export type MenuProps = {
-	whenAndWhere: string;
-	rsvp: string;
-	present: string;
-	transport: string;
-	recommendations: string;
-};
-
-export type WhereProps = {
-	title: string;
-	ceremony: string;
-	celebration: string;
-	buttonTitle: string;
-};
-
-const Main = (props: Props) => {
+const Main = (props: DictionaryTypes) => {
 	const { dictionary } = props;
 	const { menuActive, setMenuActive } = useContext(AppShellDataContext);
 
@@ -56,6 +27,8 @@ const Main = (props: Props) => {
 			<Navbar />
 			<Header timer={dictionary.counter} header={dictionary.header} />
 			<WhenAndWhere where={dictionary.where} />
+			<Rsvp form={dictionary.form} />
+			<Present />
 		</MainContainer>
 	);
 };

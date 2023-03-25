@@ -8,18 +8,11 @@ import desktopHeader from '/public/assets/desktop-header.jpg';
 import mobileHeader from '/public/assets/mobile-header.jpg';
 import { useContext } from 'react';
 import { SiteConfig } from '../../config';
+import { CounterType, HeaderType } from '../../../../types/DictionaryTypes';
 
 type Props = {
-	timer: {
-		days: string;
-		hours: string;
-		minutes: string;
-		seconds: string;
-	};
-	header: {
-		title: string;
-		subtitle: string;
-	};
+	timer: CounterType;
+	header: HeaderType;
 };
 
 export default function Header(props: Props) {
@@ -32,7 +25,6 @@ export default function Header(props: Props) {
 			ref={headerRef}
 			url={isMobile ? mobileHeader.src : desktopHeader.src}
 		>
-			{/* <Navbar /> */}
 			<TextContainer>
 				<OurWeddingContainer>
 					<Title>{header.title}</Title>

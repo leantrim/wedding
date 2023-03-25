@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import moment, { Moment, Duration } from 'moment';
 import styled from 'styled-components';
+import { CounterType } from '../../../types/DictionaryTypes';
+import { SiteConfig } from '../config';
 
 type Props = {
-	timer: {
-		days: string;
-		hours: string;
-		minutes: string;
-		seconds: string;
-	};
+	timer: CounterType;
 };
 
 export function CountdownTimer(props: Props) {
 	const { timer } = props;
-	const targetDate: Date = new Date('2023-09-30T00:00:00');
+	const targetDate: Date = new Date(SiteConfig.date.raw);
 	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 	const [domLoaded, setDomLoaded] = useState(false);
 

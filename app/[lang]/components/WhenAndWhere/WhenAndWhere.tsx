@@ -2,17 +2,18 @@ import { faLocationDot } from '@fortawesome/pro-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
+import { WhereType } from '../../../../types/DictionaryTypes';
 import { SiteConfig } from '../../config';
-import { WhereProps } from '../../main';
 import Line from '../common/Line';
 import Venue from './Venue';
 import When from './When';
 
 type Props = {
-	where: WhereProps;
+	where: WhereType;
 };
 
-const WhenAndWhere = ({ where }: Props) => {
+const WhenAndWhere = (props: Props) => {
+	const { where } = props;
 	return (
 		<div style={{ paddingLeft: 16, paddingRight: 16, backgroundColor: '#fff' }}>
 			<Container>
@@ -52,7 +53,7 @@ const GetThereContainer = styled.div`
 	margin-top: 24px;
 	margin-bottom: 24px;
 	padding: 12px;
-	width: 120px;
+	width: 140px;
 	justify-content: center;
 	background-color: rgb(249, 249, 249);
 	font-weight: bold;
@@ -97,12 +98,12 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding-top: 48px;
-	padding-bottom: 96px;
+	padding-bottom: 24px;
 	padding-left: 22px;
 	padding-right: 22px;
 	color: #444;
 `;
-const Title = styled.h1`
+export const Title = styled.h1`
 	margin-bottom: 12px;
 	font-weight: 400;
 `;
