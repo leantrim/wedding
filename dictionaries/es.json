@@ -38,8 +38,14 @@
     "attendanceValidation": "Please confirm your attendance"
   },
   "present": {
-    "title": "Present",
-    "text": "we would be very grateful. We have set up a gift list on the website of our favorite store,",
+    "title": "Your best gift, our new life together",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl",
     "bankText": "If you prefer to give us money, you can transfer it to our bank account"
+  },
+  "transport": {
+    "title": "Transport",
+    "schedule": "Schedule",
+    "meetingPoint": "Meeting point"
   }
 }
+

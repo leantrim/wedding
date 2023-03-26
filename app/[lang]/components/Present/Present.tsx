@@ -34,6 +34,7 @@ const BankSektion = styled.span`
 	padding-top: 24px;
 	font-style: italic;
 	font-size: 14px;
+	text-align: center;
 `;
 
 const Container = styled.div`

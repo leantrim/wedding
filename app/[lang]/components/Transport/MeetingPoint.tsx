@@ -6,10 +6,14 @@ import styled from 'styled-components';
 import { SubTitle } from './Transport';
 import meetingImage from '/public/assets/meeting-point.jpg';
 
-const MeetingPoint = () => {
+type Props = {
+	meetingPoint: string;
+};
+
+const MeetingPoint = (props: Props) => {
 	return (
 		<MeetingPointContainer>
-			<SubTitle>Meeting Point</SubTitle>
+			<SubTitle>{props.meetingPoint}</SubTitle>
 			<StyledIcon icon={faLocation} />
 			<MeetingImageContainer>
 				<StyledImage src={meetingImage.src} fill={true} alt={'map'} />

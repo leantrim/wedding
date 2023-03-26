@@ -1,19 +1,20 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { TransportType, WhereType } from '../../../../types/DictionaryTypes';
 import { SiteConfig } from '../../config';
 import When from '../WhenAndWhere/When';
 import { Title } from '../WhenAndWhere/WhenAndWhere';
 
 const MeetingPoint = dynamic(() => import('./MeetingPoint'));
 
-const Transport = () => {
-	const where = {
-		title: 'Transport',
-		ceremony: 'Ceremony',
-		celebration: 'Celebration',
-		buttonTitle: 'RSVP',
-	};
+type Props = {
+	where: WhereType;
+	transport: TransportType;
+};
+
+const Transport = (props: Props) => {
+	const { where, transport } = props;
 
 	const style = css`
 		flex-direction: row;
@@ -23,15 +24,14 @@ const Transport = () => {
 	return (
 		<OuterContainer>
 			<Container>
-				<Title>Transport</Title>
+				<Title>{transport.title}</Title>
 				<ScheduleContainer>
 					<SubTitle style={{ color: SiteConfig.colors.primaryDarker }}>
-						Schedule
+						{transport.schedule}
 					</SubTitle>
-					<When where={where} ContainerStyle={style} nolines />
+					<When where={where} ContainerStyle={style} noLines={true} />
 				</ScheduleContainer>
-
-				<MeetingPoint />
+				<MeetingPoint meetingPoint={transport.meetingPoint} />
 			</Container>
 		</OuterContainer>
 	);
@@ -43,7 +43,7 @@ const ScheduleContainer = styled.div`
 `;
 
 const OuterContainer = styled.div`
-	background-color: #f1ede6;
+	background-color: ${SiteConfig.colors.primary};
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,6 +60,7 @@ const Container = styled.div`
 	width: 100%;
 	margin-left: 12px;
 	margin-right: 12px;
+	gap: 48px;
 `;
 
 export const SubTitle = styled.div`

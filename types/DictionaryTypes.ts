@@ -6,7 +6,14 @@ export type DictionaryTypes = {
 		menu: MenuType;
 		form: FormType;
 		present: PresentType;
+		transport: TransportType;
 	};
+};
+
+export type TransportType = {
+	title: string;
+	schedule: string;
+	meetingPoint: string;
 };
 
 export type PresentType = {

@@ -11,11 +11,11 @@ import {
 
 type Props = {
 	where: WhereType;
-	nolines?: boolean;
+	noLines: boolean;
 	ContainerStyle?: FlattenSimpleInterpolation;
 };
 
-const When = ({ where, nolines, ContainerStyle }: Props) => {
+const When = ({ where, noLines, ContainerStyle }: Props) => {
 	const Style = css`
 		padding-top: 24px;
 	`;
@@ -27,12 +27,12 @@ const When = ({ where, nolines, ContainerStyle }: Props) => {
 				<Icons
 					icon={faRingsWedding}
 					style={{
-						color: SiteConfig.colors.primary,
 						margin: '12px 0',
 					}}
+					noLines={noLines}
 				/>
 				<span>{SiteConfig.date.ceremonyTime}</span>
-				{!nolines && (
+				{!noLines && (
 					<Line color='#ddd' height={'1px'} width={'50px'} css={Style} />
 				)}
 			</TimeContainer>
@@ -44,9 +44,10 @@ const When = ({ where, nolines, ContainerStyle }: Props) => {
 						color: SiteConfig.colors.primary,
 						margin: '12px 0',
 					}}
+					noLines={noLines}
 				/>
 				<span>{SiteConfig.date.celebrationTime}</span>
-				{!nolines && (
+				{!noLines && (
 					<Line color='#ddd' height={'1px'} width={'50px'} css={Style} />
 				)}
 			</TimeContainer>
@@ -81,16 +82,24 @@ const TimeContainer = styled.div`
 		margin-bottom: 18px;
 	}
 `;
-export const Icons = styled(FontAwesomeIcon)`
+
+type IconProps = {
+	noLines: string;
+};
+
+export const Icons = styled(({ noLines, ...rest }) => (
+	<FontAwesomeIcon {...rest} />
+))<IconProps>`
 	color: ${SiteConfig.colors.primary};
 	margin: 12px 0;
 	font-size: 24px;
 	margin-left: 8px;
 
-	--fa-primary-color: ${SiteConfig.colors
-		.primary}; /* Change the primary color */
-	--fa-secondary-color: ${SiteConfig.colors
-		.secondary}; /* Change the secondary color */
+	--fa-secondary-color: ${SiteConfig.colors.secondary};
+	--fa-primary-color: ${(props) =>
+		props.noLines
+			? SiteConfig.colors.primaryDarker
+			: SiteConfig.colors.primary};
 `;
 
 const Ceremony = styled.h1`
