@@ -6,6 +6,7 @@ import { DictionaryTypes } from '../../types/DictionaryTypes';
 import { AppShellDataContext } from '../context/appShellData';
 import Header from './components/Header/Header';
 import Navbar from './components/Header/Navbar';
+import Transport from './components/Transport/Transport';
 
 const WhenAndWhere = dynamic(
 	() => import('./components/WhenAndWhere/WhenAndWhere')
@@ -28,7 +29,8 @@ const Main = (props: DictionaryTypes) => {
 			<Header timer={dictionary.counter} header={dictionary.header} />
 			<WhenAndWhere where={dictionary.where} />
 			<Rsvp form={dictionary.form} />
-			<Present />
+			<Present present={dictionary.present} />
+			<Transport />
 		</MainContainer>
 	);
 };

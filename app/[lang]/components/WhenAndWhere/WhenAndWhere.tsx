@@ -22,7 +22,7 @@ const WhenAndWhere = (props: Props) => {
 				<InnerContainer>
 					<Venue />
 					<ThereAndWhenContainer>
-						<a href={SiteConfig.links.direction} target='_blank'>
+						<a href={SiteConfig.links.googleMaps} target='_blank'>
 							<GetThereContainer>
 								<span>{where.buttonTitle}</span>
 								<StyledIcon icon={faLocationDot} />
@@ -76,12 +76,9 @@ const InnerContainer = styled.div`
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	padding: 28px;
-
-	display: flex;
+	padding: 8px;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 
 	/* @media (min-width: 1024px) {
 		flex-direction: row;
@@ -99,13 +96,13 @@ const Container = styled.div`
 	justify-content: center;
 	padding-top: 48px;
 	padding-bottom: 24px;
-	padding-left: 22px;
-	padding-right: 22px;
 	color: #444;
 `;
 export const Title = styled.h1`
 	margin-bottom: 12px;
 	font-weight: 400;
+	color: #444;
+	text-align: center;
 `;
 
 const Date = styled.span`

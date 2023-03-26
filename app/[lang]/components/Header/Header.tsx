@@ -2,10 +2,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { AppShellDataContext } from '../../../context/appShellData';
-import useCheckMobileScreen from '../../../hooks/isMobile';
 import { CountdownTimer } from '../CountDown';
-import desktopHeader from '/public/assets/desktop-header.jpg';
-import mobileHeader from '/public/assets/mobile-header.jpg';
+import desktopHeader from '/public/assets/desktop-header.webp';
+import mobileHeader from '/public/assets/mobile-header.webp';
 import { useContext } from 'react';
 import { SiteConfig } from '../../config';
 import { CounterType, HeaderType } from '../../../../types/DictionaryTypes';
@@ -16,15 +15,11 @@ type Props = {
 };
 
 export default function Header(props: Props) {
-	const isMobile = useCheckMobileScreen();
 	const { headerRef } = useContext(AppShellDataContext);
 
 	const { timer, header } = props;
 	return (
-		<StyledHeader
-			ref={headerRef}
-			url={isMobile ? mobileHeader.src : desktopHeader.src}
-		>
+		<StyledHeader ref={headerRef}>
 			<TextContainer>
 				<OurWeddingContainer>
 					<Title>{header.title}</Title>
@@ -81,13 +76,10 @@ const Title = styled.h1`
 	}
 `;
 
-type StyleProps = {
-	url: any;
-};
-const StyledHeader = styled.div<StyleProps>`
-	background-image: url(${(props) => props.url});
+const StyledHeader = styled.div`
+	background-image: url(${mobileHeader.src});
 	@media (min-width: 768px) {
-		background-image: url(${(props) => props.url});
+		background-image: url(${desktopHeader.src});
 		background-position: left 30%;
 		background-size: cover;
 	}

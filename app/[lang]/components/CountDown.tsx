@@ -6,19 +6,18 @@ import { SiteConfig } from '../config';
 type Props = {
 	timer: CounterType;
 };
+interface TimeLeft {
+	days: number;
+	hours: number;
+	minutes: number;
+	seconds: number;
+}
 
 export function CountdownTimer(props: Props) {
 	const { timer } = props;
 	const targetDate: Date = new Date(SiteConfig.date.raw);
 	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 	const [domLoaded, setDomLoaded] = useState(false);
-
-	interface TimeLeft {
-		days: number;
-		hours: number;
-		minutes: number;
-		seconds: number;
-	}
 
 	function calculateTimeLeft(): TimeLeft {
 		const now: Date = new Date();
@@ -33,36 +32,35 @@ export function CountdownTimer(props: Props) {
 	}
 
 	useEffect(() => {
-		setDomLoaded(true);
+		const interval = domLoaded ? 1000 : 1;
 		const timer = setInterval(() => {
 			setTimeLeft(calculateTimeLeft());
-		}, 1000);
+		}, interval);
 
+		setDomLoaded(true);
 		return () => clearInterval(timer);
 	}, []);
 
 	return (
 		<>
-			{domLoaded && (
-				<CountdownContainer>
-					<CountName>
-						{timeLeft.days}
-						<CountValue>{timer.days}</CountValue>
-					</CountName>
-					<CountName>
-						{timeLeft.hours}
-						<CountValue>{timer.hours}</CountValue>
-					</CountName>
-					<CountName>
-						{timeLeft.minutes}
-						<CountValue>{timer.minutes}</CountValue>
-					</CountName>
-					<CountName>
-						{timeLeft.seconds}
-						<CountValue>{timer.seconds}</CountValue>
-					</CountName>
-				</CountdownContainer>
-			)}
+			<CountdownContainer>
+				<CountName>
+					{domLoaded && timeLeft.days}
+					<CountValue>{timer.days}</CountValue>
+				</CountName>
+				<CountName>
+					{domLoaded && timeLeft.hours}
+					<CountValue>{timer.hours}</CountValue>
+				</CountName>
+				<CountName>
+					{domLoaded && timeLeft.minutes}
+					<CountValue>{timer.minutes}</CountValue>
+				</CountName>
+				<CountName>
+					{domLoaded && timeLeft.seconds}
+					<CountValue>{timer.seconds}</CountValue>
+				</CountName>
+			</CountdownContainer>
 		</>
 	);
 }

@@ -21,5 +21,26 @@
     "present": "Present",
     "transport": "Transport",
     "recommendations": "Recommendations"
+  },
+  "form": {
+    "info": "Please confirm your attendance by filling out the following form.",
+    "firstName": "Name",
+    "firstNameValidation": "Please enter your name",
+    "lastName": "Lastname",
+    "lastNameValidation": "Please enter your name",
+    "companion": "Companion",
+    "transportTitle": "Transport",
+    "transportValidation": "Transport is required",
+    "yes": "Yes",
+    "no": "No",
+    "submitLabel": "submit",
+    "attendanceTitle": "Will you show up?",
+    "attendanceValidation": "Please confirm your attendance"
+  },
+  "present": {
+    "title": "Your best gift, our new life together",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl",
+    "bankText": "If you prefer to give us money, you can transfer it to our bank account"
   }
 }
+

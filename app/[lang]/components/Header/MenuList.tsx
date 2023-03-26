@@ -5,7 +5,7 @@ import React, { useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { AppShellDataContext } from '../../../context/appShellData';
 import { SiteConfig } from '../../config';
-import { MenuProps } from '../../main';
+import { MenuType } from '../../../../types/DictionaryTypes';
 
 type SyleProps = {
 	index: number;
@@ -20,7 +20,7 @@ const fade = keyframes`
   }
 `;
 type Props = {
-	menu: MenuProps;
+	menu: MenuType;
 };
 
 const MenuList = ({ menu }: Props) => {

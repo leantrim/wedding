@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-import venueImage from '/public/assets/venue.jpg';
+import venueImage from '/public/assets/venue.webp';
 
 const Venue = () => {
 	return (

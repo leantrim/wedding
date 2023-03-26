@@ -5,7 +5,14 @@ export type DictionaryTypes = {
 		where: WhereType;
 		menu: MenuType;
 		form: FormType;
+		present: PresentType;
 	};
+};
+
+export type PresentType = {
+	title: string;
+	text: string;
+	bankText: string;
 };
 
 export type FormType = {
