@@ -13,6 +13,8 @@ export default async function IndexPage({
 }) {
 	const dictionary = await getDictionary(params.lang);
 	const bypassPin = searchParams?.bypasspin === '42069';
+
+	console.log(searchParams?.bypasspin, 'LOG?');
 	return (
 		<>
 			<StyledComponentsRegistry>
