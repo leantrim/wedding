@@ -2,9 +2,9 @@ import dynamic from 'next/dynamic';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { TransportType, WhereType } from '../../../../types/DictionaryTypes';
+import { MenusType } from '../../../../types/Menus';
 import { SiteConfig } from '../../config';
 import When from '../WhenAndWhere/When';
-import { Title } from '../WhenAndWhere/WhenAndWhere';
 
 const MeetingPoint = dynamic(() => import('./MeetingPoint'));
 
@@ -22,9 +22,8 @@ const Transport = (props: Props) => {
 	`;
 
 	return (
-		<OuterContainer>
+		<OuterContainer id={MenusType.Transport}>
 			<Container>
-				<Title>{transport.title}</Title>
 				<ScheduleContainer>
 					<SubTitle style={{ color: SiteConfig.colors.primaryDarker }}>
 						{transport.schedule}

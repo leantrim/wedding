@@ -7,7 +7,35 @@ export type DictionaryTypes = {
 		form: FormType;
 		present: PresentType;
 		transport: TransportType;
+		recommendations: {
+			importantInfoTitle: string;
+			dressText: string;
+			adultsOnlyText: string;
+			hotelsList: HotelsListType[];
+			hotel: HotelType;
+		};
+		ourStory: OurStoryType;
 	};
+};
+
+export type OurStoryType = {
+	title: string;
+	text: string;
+};
+
+export type HotelType = {
+	directionsButtonTitle: string;
+	reserveButtonTitle: string;
+	useVoucherTitle: string;
+};
+
+export type HotelsListType = {
+	name: string;
+	description: string;
+	reservationLink: string;
+	googleMapsLink: string;
+	voucherCode: string;
+	voucherAvailabilityTitle: string;
 };
 
 export type TransportType = {

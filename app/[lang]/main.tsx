@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { DictionaryTypes } from '../../types/DictionaryTypes';
 import { AppShellDataContext } from '../context/appShellData';
+import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import Navbar from './components/Header/Navbar';
 import Transport from './components/Transport/Transport';
@@ -13,6 +14,10 @@ const WhenAndWhere = dynamic(
 );
 const Rsvp = dynamic(() => import('./components/Rsvp/Rsvp'));
 const Present = dynamic(() => import('./components/Present/Present'));
+const Recommendations = dynamic(
+	() => import('./components/Recommendations/Recommendations')
+);
+const OurStory = dynamic(() => import('./components/OurStory/OurStory'));
 
 const Main = (props: DictionaryTypes) => {
 	const { dictionary } = props;
@@ -27,10 +32,13 @@ const Main = (props: DictionaryTypes) => {
 		>
 			<Navbar />
 			<Header timer={dictionary.counter} header={dictionary.header} />
+			<OurStory ourStory={dictionary.ourStory} />
 			<WhenAndWhere where={dictionary.where} />
 			<Rsvp form={dictionary.form} />
 			<Present present={dictionary.present} />
 			<Transport transport={dictionary.transport} where={dictionary.where} />
+			<Recommendations recommendations={dictionary.recommendations} />
+			<Footer />
 		</MainContainer>
 	);
 };

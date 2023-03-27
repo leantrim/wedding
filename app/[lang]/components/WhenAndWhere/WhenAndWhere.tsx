@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 import { WhereType } from '../../../../types/DictionaryTypes';
+import { MenusType } from '../../../../types/Menus';
 import { SiteConfig } from '../../config';
 import Line from '../common/Line';
 import Venue from './Venue';
@@ -15,8 +16,10 @@ type Props = {
 const WhenAndWhere = (props: Props) => {
 	const { where } = props;
 	return (
-		<div style={{ paddingLeft: 16, paddingRight: 16, backgroundColor: '#fff' }}>
-			<Container>
+		<div
+			style={{ paddingLeft: 16, paddingRight: 16, backgroundColor: '#f9f9f9' }}
+		>
+			<Container id={MenusType.WhenAndWhere}>
 				<Title>{where.title}</Title>
 				<Date>{SiteConfig.date.formatted}</Date>
 				<InnerContainer>
@@ -49,7 +52,7 @@ const ThereAndWhenContainer = styled.div`
 	align-items: center;
 `;
 
-const GetThereContainer = styled.div`
+export const GetThereContainer = styled.div`
 	margin-top: 24px;
 	margin-bottom: 24px;
 	padding: 12px;

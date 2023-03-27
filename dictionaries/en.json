@@ -1,20 +1,24 @@
+
 {
   "header": {
     "title": "Sepideh & George",
     "subtitle": "are getting married"
   },
+
   "counter": {
     "days": "Days",
     "hours": "Hours",
     "minutes": "Minutes",
     "seconds": "Seconds"
   },
+
   "where": {
     "title": "Where and when",
     "ceremony": "Ceremony",
     "celebration": "Celebration",
     "buttonTitle": "Get Directions"
   },
+
   "menu": {
     "whenAndWhere": "Where and when",
     "rsvp": "RSVP",
@@ -22,6 +26,7 @@
     "transport": "Transport",
     "recommendations": "Recommendations"
   },
+
   "form": {
     "info": "Please confirm your attendance by filling out the following form.",
     "firstName": "Name",
@@ -37,15 +42,52 @@
     "attendanceTitle": "Will you show up?",
     "attendanceValidation": "Please confirm your attendance"
   },
+
   "present": {
     "title": "Your best gift, our new life together",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl",
     "bankText": "If you prefer to give us money, you can transfer it to our bank account"
   },
+
   "transport": {
     "title": "Transport",
     "schedule": "Schedule",
     "meetingPoint": "Meeting point"
+  },
+  
+  "ourStory": {
+    "title": "Our story",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl"
+  },
+
+  "recommendations": {
+    "importantInfoTitle": "Important information",
+    "dressText": "please only wear white",
+    "adultsOnlyText": "This wedding is for adults only but you can bring your kids anyways",
+    "hotel": {
+      "title": "Hotels",
+      "directionsButtonTitle": "Directions",
+      "reserveButtonTitle": "Reservate",
+      "useVoucherTitle": "Use voucher"
+    },
+    "hotelsList": [
+      {
+      "name": "Hotel Barcelona catedral",
+      "description": "This is a four and half star hotel with poool skrt",
+      "googleMapsLink": "Direction link",
+      "reservationLink": "Reservation link",
+      "voucherCode": "stepidehandgeorge",
+      "voucherAvailabilityTitle": "voucher only available between 13 september and 25 september"
+    }, 
+    {
+      "name": "Hotel Barcelona universal",
+      "description": "this is a universal hotel skrt skrt",
+      "reservationLink": "Reservation link 1",
+      "googleMapsLink": "Direction link",
+      "voucherCode": "stepidehandgeorge",
+      "voucherAvailabilityTitle": "voucher only available between 13 september and 25 september"
+    }]
   }
 }
+
 

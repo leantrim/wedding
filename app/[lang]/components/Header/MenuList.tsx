@@ -6,25 +6,23 @@ import styled, { keyframes } from 'styled-components';
 import { AppShellDataContext } from '../../../context/appShellData';
 import { SiteConfig } from '../../config';
 import { MenuType } from '../../../../types/DictionaryTypes';
+import { MenusType } from '../../../../types/Menus';
 
 type SyleProps = {
 	index: number;
 };
 
-const fade = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
 type Props = {
 	menu: MenuType;
 };
 
 const MenuList = ({ menu }: Props) => {
 	const { menuActive, setMenuActive } = useContext(AppShellDataContext);
+
+	const handleClick = () => {
+		console.log('CLICK!');
+		setMenuActive(false);
+	};
 
 	return (
 		<>
@@ -34,11 +32,41 @@ const MenuList = ({ menu }: Props) => {
 					<CloseContainer onClick={() => setMenuActive(false)}>
 						<CloseButton icon={faClose} />
 					</CloseContainer>
-					<StyledLink index={0}>{menu.whenAndWhere}</StyledLink>
-					<StyledLink index={1}>{menu.rsvp}</StyledLink>
-					<StyledLink index={2}>{menu.present}</StyledLink>
-					<StyledLink index={3}>{menu.transport}</StyledLink>
-					<StyledLink index={4}>{menu.recommendations}</StyledLink>
+					<StyledLink
+						index={0}
+						href={`#${MenusType.WhenAndWhere}`}
+						onClick={handleClick}
+					>
+						{menu.whenAndWhere}
+					</StyledLink>
+					<StyledLink
+						index={1}
+						href={`#${MenusType.RSVP}`}
+						onClick={handleClick}
+					>
+						{menu.rsvp}
+					</StyledLink>
+					<StyledLink
+						index={2}
+						href={`#${MenusType.Present}`}
+						onClick={handleClick}
+					>
+						{menu.present}
+					</StyledLink>
+					<StyledLink
+						index={3}
+						href={`#${MenusType.Transport}`}
+						onClick={handleClick}
+					>
+						{menu.transport}
+					</StyledLink>
+					<StyledLink
+						index={4}
+						href={`#${MenusType.Recommendations}`}
+						onClick={handleClick}
+					>
+						{menu.recommendations}
+					</StyledLink>
 				</Container>
 			)}
 			<MenuOverlay menuActive={menuActive} />

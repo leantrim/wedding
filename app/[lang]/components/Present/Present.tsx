@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { PresentType } from '../../../../types/DictionaryTypes';
+import { MenusType } from '../../../../types/Menus';
 import { SiteConfig } from '../../config';
 import Line from '../common/Line';
 import { Title } from '../WhenAndWhere/WhenAndWhere';
@@ -15,7 +16,7 @@ type Props = {
 
 const Present = ({ present }: Props) => {
 	return (
-		<OuterContainer>
+		<OuterContainer id={MenusType.Present}>
 			<Container>
 				<Title style={{ color: '#444' }}>{present.title}</Title>
 				<FontAwesomeIcon icon={faGift} className='icon' />
