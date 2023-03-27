@@ -70,9 +70,9 @@ const Subtitle = styled.h2`
 `;
 const Title = styled.h1`
 	color: white;
-	font-size: 48px;
+	font-size: 44px;
 	@media (max-width: 380px) {
-		font-size: 44px;
+		font-size: 40px;
 	}
 `;
 
