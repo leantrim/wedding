@@ -32,6 +32,7 @@ export default async function IndexPage({
 							margin: '24px',
 						}}
 					>
+						<span>PIN? {bypassPin}</span>
 						<title>Website access forbidden</title>
 						<h3>Sepideh And George are getting married!</h3>
 						<h4>
