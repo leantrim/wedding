@@ -15,17 +15,16 @@ export default async function IndexPage({
 	searchParams,
 }: IndexPageProps) {
 	const dictionary = await getDictionary(params.lang);
-	const bypassPin = searchParams?.bypasspin === '42069';
 
 	return (
 		<>
 			<StyledComponentsRegistry>
-				{bypassPin ? (
-					<div>
-						<Main dictionary={dictionary} />
-						<MenuList menu={dictionary.menu} />
-					</div>
-				) : (
+				{/* {bypassPin ? ( */}
+				<div>
+					<Main dictionary={dictionary} />
+					<MenuList menu={dictionary.menu} />
+				</div>
+				{/* ) : (
 					<div
 						style={{
 							display: 'flex',
@@ -44,7 +43,7 @@ export default async function IndexPage({
 							check back soon!
 						</h4>
 					</div>
-				)}
+				)} */}
 			</StyledComponentsRegistry>
 		</>
 	);
