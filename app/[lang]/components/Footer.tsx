@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Footer = () => {
 	return (
 		<Container>
-			<span>© 2023 - stepidehandgeorge.com</span>
+			<span>© 2023 - sepidehandgeorge.com</span>
 			<span>
 				Created by <a href='https://mediapartner.se'>mediapartners.se</a>
 			</span>
