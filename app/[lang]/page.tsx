@@ -1,20 +1,22 @@
+import { ParsedUrlQuery } from 'querystring';
 import { getDictionary } from '../../get-dictionary';
 import { Locale } from '../../i18n-config';
 import MenuList from './components/Header/MenuList';
 import StyledComponentsRegistry from './lib/registry';
 import Main from './main';
 
+type IndexPageProps = {
+	params: { lang: Locale; slug: string };
+	searchParams?: ParsedUrlQuery;
+};
+
 export default async function IndexPage({
 	params,
 	searchParams,
-}: {
-	params: { lang: Locale };
-	searchParams?: { [key: string]: string | string[] | undefined };
-}) {
+}: IndexPageProps) {
 	const dictionary = await getDictionary(params.lang);
 	const bypassPin = searchParams?.bypasspin === '42069';
 
-	console.log(searchParams?.bypasspin, 'LOG?');
 	return (
 		<>
 			<StyledComponentsRegistry>
@@ -34,7 +36,7 @@ export default async function IndexPage({
 							margin: '24px',
 						}}
 					>
-						<span>PIN? {bypassPin}</span>
+						<span>PIN? {searchParams?.bypasspin}</span>
 						<title>Website access forbidden</title>
 						<h3>Sepideh And George are getting married!</h3>
 						<h4>
