@@ -9,38 +9,41 @@ type Props = {
 	register: UseFormRegister<FormData>;
 	errors: FieldErrors<FormData>;
 	form: FormType;
+	isAttending: boolean;
 };
 
 const RsvpRadio = (props: Props) => {
-	const { register, errors, form } = props;
+	const { register, errors, form, isAttending } = props;
 	return (
 		<Container>
-			<LabelDiv>
-				<Label>{form.transportTitle} *</Label>
-				<RadioContainer>
-					<LabelContainer>
-						<StyledLabel>
-							<StyledRadio
-								{...register('transport')}
-								type='radio'
-								value='true'
-							/>
-							{form.yes}
-						</StyledLabel>
-					</LabelContainer>
-					<LabelContainer>
-						<StyledLabel>
-							<StyledRadio
-								{...register('transport')}
-								type='radio'
-								value='false'
-							/>
-							{form.no}
-						</StyledLabel>
-					</LabelContainer>
-				</RadioContainer>
-				{errors.transport && <Error>{errors.transport?.message}</Error>}
-			</LabelDiv>
+			{isAttending && (
+				<LabelDiv>
+					<Label>{form.transportTitle} *</Label>
+					<RadioContainer>
+						<LabelContainer>
+							<StyledLabel>
+								<StyledRadio
+									{...register('transport')}
+									type='radio'
+									value='true'
+								/>
+								{form.yes}
+							</StyledLabel>
+						</LabelContainer>
+						<LabelContainer>
+							<StyledLabel>
+								<StyledRadio
+									{...register('transport')}
+									type='radio'
+									value='false'
+								/>
+								{form.no}
+							</StyledLabel>
+						</LabelContainer>
+					</RadioContainer>
+					{errors.transport && <Error>{errors.transport?.message}</Error>}
+				</LabelDiv>
+			)}
 			<LabelDiv>
 				<Label>{form.attendanceTitle} *</Label>
 				<RadioContainer>

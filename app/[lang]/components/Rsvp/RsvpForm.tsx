@@ -52,14 +52,22 @@ const resolver: Resolver<FormData, FormType> = async (
 const RsvpForm = (props: Props) => {
 	const { onSubmit, form } = props;
 	const [isPageLoaded, setIsPageLoaded] = useState(false);
+	const [isAttending, setIsAttending] = useState(false);
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		watch,
 	} = useForm<FormData, FormType>({
 		resolver: (values, _context, options) => resolver(values, form, options),
 	});
+	const watchAttendance = watch('attendance', 'false');
 
+	useEffect(() => {
+		setIsAttending(watchAttendance === 'true');
+	}, [watchAttendance]);
+
+	console.log(isAttending);
 	useEffect(() => {
 		setIsPageLoaded(true);
 	}, []);
@@ -84,14 +92,22 @@ const RsvpForm = (props: Props) => {
 						</LabelDiv>
 					</NameContainer>
 				</Row>
-				<Row>
-					<LabelDiv>
-						<Label>{form.companion}</Label>
-						<StyledInput {...register('companion')} />
-						{errors.companion && <Error>{errors.companion.message}</Error>}
-					</LabelDiv>
-				</Row>
-				<RsvpRadio errors={errors} form={form} register={register} />
+				<RsvpRadio
+					errors={errors}
+					form={form}
+					register={register}
+					isAttending={isAttending}
+				/>
+
+				{isAttending && (
+					<Row>
+						<LabelDiv>
+							<Label>{form.companion}</Label>
+							<StyledInput {...register('companion')} />
+							{errors.companion && <Error>{errors.companion.message}</Error>}
+						</LabelDiv>
+					</Row>
+				)}
 				<Row style={{ marginBottom: '0' }}>
 					<SubmitButton type='submit' disabled={!isPageLoaded}>
 						{form.submitLabel}

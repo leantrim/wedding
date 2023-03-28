@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components';
 import { TransportType, WhereType } from '../../../../types/DictionaryTypes';
 import { MenusType } from '../../../../types/Menus';
 import { SiteConfig } from '../../config';
-import When from '../WhenAndWhere/When';
 
 const MeetingPoint = dynamic(() => import('./MeetingPoint'));
 
@@ -28,7 +27,6 @@ const Transport = (props: Props) => {
 					<SubTitle style={{ color: SiteConfig.colors.primaryDarker }}>
 						{transport.schedule}
 					</SubTitle>
-					<When where={where} ContainerStyle={style} noLines={true} />
 				</ScheduleContainer>
 				<MeetingPoint meetingPoint={transport.meetingPoint} />
 			</Container>

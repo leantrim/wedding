@@ -90,5 +90,6 @@ export type WhereType = {
 	title: string;
 	ceremony: string;
 	celebration: string;
+	arrival: string;
 	buttonTitle: string;
 };

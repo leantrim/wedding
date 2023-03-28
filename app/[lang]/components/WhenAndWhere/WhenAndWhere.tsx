@@ -36,7 +36,7 @@ const WhenAndWhere = (props: Props) => {
 							width='100%'
 							height={'1px'}
 						/>
-						<When where={where} noLines={false} />
+						<When where={where} />
 					</ThereAndWhenContainer>
 				</InnerContainer>
 			</Container>
