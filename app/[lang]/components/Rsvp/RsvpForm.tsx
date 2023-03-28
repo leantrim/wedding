@@ -103,7 +103,7 @@ const RsvpForm = (props: Props) => {
 					<Row>
 						<LabelDiv>
 							<Label>{form.companion}</Label>
-							<StyledInput {...register('companion')} />
+							<StyledInput {...register('companion')} type='text' />
 							{errors.companion && <Error>{errors.companion.message}</Error>}
 						</LabelDiv>
 					</Row>
