@@ -139,6 +139,7 @@ const FormContainer = styled.div`
 const Label = styled.label`
 	display: block;
 	margin-bottom: 4px;
+	font-size: 16px;
 `;
 
 const Form = styled.form`
