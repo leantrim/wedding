@@ -23,6 +23,8 @@ a {
     box-sizing: border-box;
   }
 
-  label {
+  input[type='text'],
+  input[type='number'],
+  textarea {
     font-size: 16px;
   }
