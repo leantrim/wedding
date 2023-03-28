@@ -3,8 +3,8 @@ import universalImg from '/public/assets/hotels/universal.jpg';
 
 export const SiteConfig = {
 	colors: {
-		primary: '#d6c9b6',
-		primaryDarker: '#766d60',
+		primary: '#ebe7e1',
+		primaryDarker: '#d6c9b6',
 		secondary: '#999',
 	},
 	date: {

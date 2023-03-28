@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Resolver, useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
+import { SiteConfig } from '../../config';
 import { FormData } from './Rsvp';
 import RsvpRadio from './RsvpRadio';
 
@@ -173,7 +174,7 @@ export const Error = styled.span`
 `;
 
 const SubmitButton = styled.button`
-	background-color: #766d60;
+	background-color: ${SiteConfig.colors.primaryDarker};
 	border: none;
 	color: white;
 	padding: 15px 32px;

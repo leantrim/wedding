@@ -50,8 +50,8 @@ const Rsvp = (props: Props) => {
 };
 
 const Container = styled.div`
-	padding-bottom: 48px;
-	padding-top: 48px;
+	padding-bottom: 90px;
+	padding-top: 90px;
 `;
 
 export default Rsvp;

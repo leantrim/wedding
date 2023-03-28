@@ -2,6 +2,7 @@ import { faHeart } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { SiteConfig } from '../../config';
 
 const HeartBeatLine = () => {
 	return (
@@ -29,7 +30,7 @@ const HeartbeatContainer = styled.div`
 `;
 const pulse = keyframes`
   0% {
-    color: #d6c9b6;
+    color: ${SiteConfig.colors.primary};
     transform: scale(1);
   }
   50% {
@@ -37,7 +38,7 @@ const pulse = keyframes`
     transform: scale(1.05);
   }
   100% {
-    color: #d6c9b6;
+    color: ${SiteConfig.colors.primary};
     transform: scale(1);
   }
 `;
