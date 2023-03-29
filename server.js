@@ -21,12 +21,12 @@ app.prepare().then(() => {
 });
 
 
-const appApi = express();
-appApi.use(cors());
+// const appApi = express();
+// appApi.use(cors());
 
-appApi.use('/api', (req, res) => {
-  res.send('Hello World!');
-});
+// appApi.use('/api', (req, res) => {
+//   res.send('Hello World!');
+// });
 
-appApi.listen(8000, () => console.log('Listening on port 8000...'));
+// appApi.listen(8000, () => console.log('Listening on port 8000...'));
 
