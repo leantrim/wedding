@@ -65,6 +65,7 @@ const OuterContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 12px;
+	height: 100%;
 `;
 
 const Info = styled.span`
