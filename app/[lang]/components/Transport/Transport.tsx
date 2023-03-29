@@ -8,17 +8,11 @@ import { SiteConfig } from '../../config';
 const MeetingPoint = dynamic(() => import('./MeetingPoint'));
 
 type Props = {
-	where: WhereType;
 	transport: TransportType;
 };
 
 const Transport = (props: Props) => {
-	const { where, transport } = props;
-
-	const style = css`
-		flex-direction: row;
-		justify-content: space-around;
-	`;
+	const { transport } = props;
 
 	return (
 		<OuterContainer id={MenusType.Transport}>
@@ -45,6 +39,7 @@ const OuterContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 48px 0;
+	min-height: 100%;
 `;
 
 const Container = styled.div`

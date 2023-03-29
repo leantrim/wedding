@@ -17,7 +17,11 @@ const WhenAndWhere = (props: Props) => {
 	const { where } = props;
 	return (
 		<div
-			style={{ paddingLeft: 16, paddingRight: 16, backgroundColor: '#f9f9f9' }}
+			style={{
+				paddingLeft: 16,
+				paddingRight: 16,
+				backgroundColor: '#f9f9f9',
+			}}
 		>
 			<Container id={MenusType.WhenAndWhere}>
 				<Title>{where.title}</Title>

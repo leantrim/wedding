@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const cors = require('cors');
 
 const dev = process.env.NODE_ENV !== 'production';
 const hostname = dev ? 'localhost' : 'sepidehandgeorge.com'
@@ -18,3 +19,14 @@ app.prepare().then(() => {
     if (err) throw err;
   });
 });
+
+
+const appApi = express();
+appApi.use(cors());
+
+appApi.use('/api', (req, res) => {
+  res.send('Hello World!');
+});
+
+appApi.listen(8000, () => console.log('Listening on port 8000...'));
+

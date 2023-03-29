@@ -2,9 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Resolver, useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
+import { MenusType } from '../../../../types/Menus';
 import { SiteConfig } from '../../config';
+import { Title } from '../WhenAndWhere/WhenAndWhere';
 import { FormData } from './Rsvp';
-import RsvpRadio from './RsvpRadio';
+import RsvpRadio, {
+	LabelContainer,
+	RadioContainer,
+	StyledLabel,
+	StyledRadio,
+} from './RsvpRadio';
 
 type Props = {
 	onSubmit: (data: FormData) => void;
@@ -31,12 +38,13 @@ const resolver: Resolver<FormData, FormType> = async (
 		};
 	}
 
-	if (!values.transport) {
+	if (!values.transport && values.attendance === 'true') {
 		errors.transport = {
 			type: 'required',
 			message: context?.transportValidation!,
 		};
 	}
+
 	if (!values.attendance) {
 		errors.attendance = {
 			type: 'required',
@@ -54,6 +62,7 @@ const RsvpForm = (props: Props) => {
 	const { onSubmit, form } = props;
 	const [isPageLoaded, setIsPageLoaded] = useState(false);
 	const [isAttending, setIsAttending] = useState(false);
+	const [hasChoosenAttendance, setHasChoosenAttendance] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -62,10 +71,14 @@ const RsvpForm = (props: Props) => {
 	} = useForm<FormData, FormType>({
 		resolver: (values, _context, options) => resolver(values, form, options),
 	});
-	const watchAttendance = watch('attendance', 'false');
+	const watchAttendance = watch('attendance', undefined);
+	const watchTransport = watch('transport', undefined);
 
 	useEffect(() => {
-		setIsAttending(watchAttendance === 'true');
+		if (watchAttendance !== undefined) {
+			setIsAttending(watchAttendance === 'true');
+			setHasChoosenAttendance(true);
+		}
 	}, [watchAttendance]);
 
 	console.log(isAttending);
@@ -74,48 +87,106 @@ const RsvpForm = (props: Props) => {
 	}, []);
 
 	return (
-		<FormContainer>
-			<Form onSubmit={handleSubmit(onSubmit)}>
-				<Row>
-					<NameContainer>
-						<LabelDiv>
-							<Label>{form.firstName} *</Label>
-							<StyledInput
-								{...register('name', { required: form.firstNameValidation })}
-								type='text'
-							/>
-							{errors.name && <Error>{errors.name.message}</Error>}
-						</LabelDiv>
-						<LabelDiv>
-							<Label>{form.lastName} *</Label>
-							<StyledInput {...register('surname')} type='text' />
-							{errors.surname && <Error>{errors.surname.message}</Error>}
-						</LabelDiv>
-					</NameContainer>
-				</Row>
-				<RsvpRadio
-					errors={errors}
-					form={form}
-					register={register}
-					isAttending={isAttending}
-				/>
+		<Form onSubmit={handleSubmit(onSubmit)}>
+			<Title
+				style={{
+					textAlign: 'center',
+					color: '#444',
+				}}
+			>
+				RSVP
+			</Title>
+			<p
+				style={{
+					textAlign: 'center',
+					color: '#676767',
+					margin: '0',
+				}}
+			>
+				{form.info}
+			</p>
+			<Row>
+				<NameContainer>
+					<LabelDiv>
+						<Label>{form.firstName} *</Label>
+						<StyledInput
+							{...register('name', { required: form.firstNameValidation })}
+							type='text'
+						/>
+						{errors.name && <Error>{errors.name.message}</Error>}
+					</LabelDiv>
+					<LabelDiv>
+						<Label>{form.lastName} *</Label>
+						<StyledInput {...register('surname')} type='text' />
+						{errors.surname && <Error>{errors.surname.message}</Error>}
+					</LabelDiv>
+				</NameContainer>
+			</Row>
+			<RsvpRadio
+				errors={errors}
+				form={form}
+				register={register}
+				isAttending={isAttending}
+				hasChoosenAttendance={hasChoosenAttendance}
+			/>
 
-				{isAttending && (
-					<Row>
-						<LabelDiv>
-							<Label>{form.companion}</Label>
-							<StyledInput {...register('companion')} type='text' />
-							{errors.companion && <Error>{errors.companion.message}</Error>}
-						</LabelDiv>
-					</Row>
-				)}
-				<Row style={{ marginBottom: '0' }}>
-					<SubmitButton type='submit' disabled={!isPageLoaded}>
-						{form.submitLabel}
-					</SubmitButton>
+			{isAttending && (
+				<Row>
+					<LabelDiv>
+						<Label>{form.companion}</Label>
+						<StyledInput {...register('companion')} type='text' />
+						{errors.companion && <Error>{errors.companion.message}</Error>}
+					</LabelDiv>
 				</Row>
-			</Form>
-		</FormContainer>
+			)}
+			{isAttending && (
+				<LabelDiv style={{ display: 'flex', flexDirection: 'column' }}>
+					<div style={{ display: 'flex' }}>
+						<Label>{form.transportTitle} *</Label>
+						<RadioContainer style={{ marginTop: '0px', marginLeft: '12px' }}>
+							<LabelContainer>
+								<StyledLabel>
+									<StyledRadio
+										{...register('transport')}
+										type='radio'
+										value='true'
+									/>
+									{form.yes}
+								</StyledLabel>
+							</LabelContainer>
+							<LabelContainer>
+								<StyledLabel>
+									<StyledRadio
+										{...register('transport')}
+										type='radio'
+										value='false'
+									/>
+									{form.no}
+								</StyledLabel>
+							</LabelContainer>
+						</RadioContainer>
+					</div>
+					{errors.transport && <Error>{errors.transport?.message}</Error>}
+					{watchTransport === 'true' && (
+						<a
+							href={`#${MenusType.Transport}`}
+							style={{
+								marginTop: '12px',
+								marginBottom: '12px',
+								textDecoration: 'underline',
+							}}
+						>
+							<span>click here for more info regarding transport!</span>
+						</a>
+					)}
+				</LabelDiv>
+			)}
+			<Row style={{ marginBottom: '0', marginTop: '25px' }}>
+				<SubmitButton type='submit' disabled={!isPageLoaded}>
+					{form.submitLabel}
+				</SubmitButton>
+			</Row>
+		</Form>
 	);
 };
 
@@ -130,13 +201,6 @@ const NameContainer = styled.div`
 	gap: 12px;
 `;
 
-const FormContainer = styled.div`
-	display: flex;
-	justify-content: center;
-	padding-left: 12px;
-	padding-right: 12px;
-`;
-
 const Label = styled.label`
 	display: block;
 	margin-bottom: 4px;
@@ -144,14 +208,18 @@ const Label = styled.label`
 `;
 
 const Form = styled.form`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	gap: 12px;
 	max-width: 600px;
 	width: 100%;
+	height: 100%;
 `;
 
 const Row = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 24px;
 `;
 
 const StyledInput = styled.input`

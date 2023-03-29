@@ -20,7 +20,6 @@ const MenuList = ({ menu }: Props) => {
 	const { menuActive, setMenuActive } = useContext(AppShellDataContext);
 
 	const handleClick = () => {
-		console.log('CLICK!');
 		setMenuActive(false);
 	};
 

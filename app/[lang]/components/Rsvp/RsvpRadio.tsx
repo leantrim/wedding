@@ -10,10 +10,11 @@ type Props = {
 	errors: FieldErrors<FormData>;
 	form: FormType;
 	isAttending: boolean;
+	hasChoosenAttendance: boolean;
 };
 
 const RsvpRadio = (props: Props) => {
-	const { register, errors, form, isAttending } = props;
+	const { register, errors, form, isAttending, hasChoosenAttendance } = props;
 	return (
 		<Container>
 			<LabelDiv>
@@ -42,59 +43,46 @@ const RsvpRadio = (props: Props) => {
 				</RadioContainer>
 				{errors.attendance && <Error>{errors.attendance?.message}</Error>}
 			</LabelDiv>
-			{isAttending && (
-				<LabelDiv>
-					<Label>{form.transportTitle} *</Label>
-					<RadioContainer>
-						<LabelContainer>
-							<StyledLabel>
-								<StyledRadio
-									{...register('transport')}
-									type='radio'
-									value='true'
-								/>
-								{form.yes}
-							</StyledLabel>
-						</LabelContainer>
-						<LabelContainer>
-							<StyledLabel>
-								<StyledRadio
-									{...register('transport')}
-									type='radio'
-									value='false'
-								/>
-								{form.no}
-							</StyledLabel>
-						</LabelContainer>
-					</RadioContainer>
-					{errors.transport && <Error>{errors.transport?.message}</Error>}
-				</LabelDiv>
+			{hasChoosenAttendance && (
+				<Span>
+					{isAttending
+						? 'we very glad you are able to attend!'
+						: 'oh no! we are sorry you can not attend!'}
+				</Span>
 			)}
 		</Container>
 	);
 };
 
-const Container = styled.div`
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 48px;
-	margin-top: 24px;
+const Span = styled.span`
+	background-color: #d6c9b66b;
+	padding: 17px;
+	border-radius: 8px;
+	margin-top: 12px;
 `;
 
-const StyledLabel = styled.label`
+const Container = styled.div`
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+`;
+
+export const StyledLabel = styled.label`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
 `;
 
-const LabelContainer = styled.label`
+export const LabelContainer = styled.label`
 	&:hover,
 	input:hover {
 		cursor: pointer;
 	}
 `;
 
-const StyledRadio = styled.input.attrs({ type: 'radio' })`
+export const StyledRadio = styled.input.attrs({ type: 'radio' })`
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -138,7 +126,7 @@ const LabelDiv = styled.div`
 	text-align: center;
 `;
 
-const RadioContainer = styled.div`
+export const RadioContainer = styled.div`
 	display: flex;
 	gap: 12px;
 	justify-content: center;

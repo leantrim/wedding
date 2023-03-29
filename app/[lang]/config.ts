@@ -14,9 +14,6 @@ export const SiteConfig = {
 		ceremonyTime: '17:30 h.',
 		celebrationTime: '18:30 h.',
 	},
-	links: {
-		googleMaps: '',
-	},
 	iban: 'IBAN: NL 91 ABNA 0467 0000 01',
 	hotels: [
 		{
@@ -26,4 +23,7 @@ export const SiteConfig = {
 			image: universalImg.src,
 		},
 	],
+	links: {
+		googleMaps: '',
+	},
 };

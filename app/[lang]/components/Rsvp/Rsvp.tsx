@@ -25,33 +25,17 @@ const Rsvp = (props: Props) => {
 
 	return (
 		<Container id={MenusType.RSVP}>
-			<Title
-				style={{
-					textAlign: 'center',
-					color: '#444',
-					marginBottom: '24px',
-				}}
-			>
-				RSVP
-			</Title>
-			<p
-				style={{
-					textAlign: 'center',
-					color: '#676767',
-					margin: '0 12px',
-					marginBottom: '12px',
-				}}
-			>
-				{form.info}
-			</p>
 			<RsvpForm onSubmit={onSubmit} form={form} />
 		</Container>
 	);
 };
 
 const Container = styled.div`
-	padding-bottom: 90px;
-	padding-top: 90px;
+	height: 100%;
+	padding: 48px 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 export default Rsvp;
