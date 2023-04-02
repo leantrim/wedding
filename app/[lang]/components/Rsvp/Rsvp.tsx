@@ -31,7 +31,9 @@ const Rsvp = (props: Props) => {
 
 const Container = styled.div`
 	@media (max-width: 768px) {
-		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 	}
 	padding: 48px 24px;
 	display: flex;

@@ -29,9 +29,3 @@ a {
   textarea {
     font-size: 16px;
   }
-
-  html, body{
-    -webkit-overflow-scrolling : touch !important;
-    overflow: auto !important;
-    height: 100% !important;
-}
