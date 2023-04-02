@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
@@ -10,11 +10,11 @@ type Props = {
 	errors: FieldErrors<FormData>;
 	form: FormType;
 	isAttending: boolean;
-	hasChoosenAttendance: boolean;
 };
 
 const RsvpRadio = (props: Props) => {
-	const { register, errors, form, isAttending, hasChoosenAttendance } = props;
+	const { register, errors, form, isAttending } = props;
+	const [hasChoosenAttendance, setHasChoosenAttendance] = useState(false);
 	return (
 		<Container>
 			<LabelDiv>
@@ -26,6 +26,7 @@ const RsvpRadio = (props: Props) => {
 								{...register('attendance')}
 								type='radio'
 								value='true'
+								onClick={() => setHasChoosenAttendance(true)}
 							/>
 							{form.yes}
 						</StyledLabel>
@@ -36,6 +37,7 @@ const RsvpRadio = (props: Props) => {
 								{...register('attendance')}
 								type='radio'
 								value='false'
+								onClick={() => setHasChoosenAttendance(true)}
 							/>
 							{form.no}
 						</StyledLabel>
@@ -44,11 +46,7 @@ const RsvpRadio = (props: Props) => {
 				{errors.attendance && <Error>{errors.attendance?.message}</Error>}
 			</LabelDiv>
 			{hasChoosenAttendance && (
-				<Span>
-					{isAttending
-						? 'we very glad you are able to attend!'
-						: 'oh no! we are sorry you can not attend!'}
-				</Span>
+				<Span>{isAttending ? form.attendingText : form.notAttendingText}</Span>
 			)}
 		</Container>
 	);

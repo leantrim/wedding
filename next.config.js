@@ -11,9 +11,9 @@ const nextConfig = {
     
   compiler: {
     styledComponents: {
-      displayName: true,
-      ssr: true,
-      fileName: true,
+      displayName: process.env.NODE_ENV !== 'production',
+      ssr: process.env.NODE_ENV !== 'production',
+      fileName: process.env.NODE_ENV !== 'production',
     },
   },
 }

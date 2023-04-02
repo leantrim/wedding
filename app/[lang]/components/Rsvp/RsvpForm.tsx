@@ -62,7 +62,6 @@ const RsvpForm = (props: Props) => {
 	const { onSubmit, form } = props;
 	const [isPageLoaded, setIsPageLoaded] = useState(false);
 	const [isAttending, setIsAttending] = useState(false);
-	const [hasChoosenAttendance, setHasChoosenAttendance] = useState(false);
 	const {
 		register,
 		handleSubmit,
@@ -77,11 +76,9 @@ const RsvpForm = (props: Props) => {
 	useEffect(() => {
 		if (watchAttendance !== undefined) {
 			setIsAttending(watchAttendance === 'true');
-			setHasChoosenAttendance(true);
 		}
 	}, [watchAttendance]);
 
-	console.log(isAttending);
 	useEffect(() => {
 		setIsPageLoaded(true);
 	}, []);
@@ -127,7 +124,6 @@ const RsvpForm = (props: Props) => {
 				form={form}
 				register={register}
 				isAttending={isAttending}
-				hasChoosenAttendance={hasChoosenAttendance}
 			/>
 
 			{isAttending && (

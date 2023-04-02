@@ -31,7 +31,9 @@ const Rsvp = (props: Props) => {
 };
 
 const Container = styled.div`
-	height: 100%;
+	@media (max-width: 768px) {
+		min-height: 100%;
+	}
 	padding: 48px 24px;
 	display: flex;
 	justify-content: center;

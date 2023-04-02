@@ -1,94 +1,84 @@
-
 {
   "header": {
     "title": "Sepideh & George",
-    "subtitle": "are getting married"
+    "subtitle": "Nos casamos!"
   },
-
   "counter": {
-    "days": "Days",
-    "hours": "Hours",
-    "minutes": "Minutes",
-    "seconds": "Seconds"
+    "days": "Días",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos"
   },
-
   "where": {
-    "title": "Where and when",
-    "ceremony": "Ceremony",
-    "celebration": "Celebration",
-    "arrival": "Arrival",
-    "buttonTitle": "Get Directions"
+    "title": "Donde y cuando",
+    "ceremony": "Ceremonia",
+    "celebration": "Celebración",
+    "arrival": "Llegada",
+    "buttonTitle": "Como llegar"
   },
-
   "menu": {
-    "whenAndWhere": "Where and when",
+    "whenAndWhere": "Donde y cuando",
     "rsvp": "RSVP",
-    "present": "Present",
-    "transport": "Transport",
-    "recommendations": "Recommendations"
+    "present": "Regalo",
+    "transport": "Transporte",
+    "recommendations": "Recomendaciones"
   },
-
   "form": {
-    "info": "Please confirm your attendance by filling out the following form.",
-    "firstName": "Name",
-    "firstNameValidation": "Please enter your name",
-    "lastName": "Lastname",
-    "lastNameValidation": "Please enter your name",
-    "companion": "Companion",
-    "transportTitle": "Transport",
-    "transportValidation": "Transport is required",
-    "yes": "Yes",
+    "info": "Por favor confirme su asistencia rellenando el formulario.",
+    "firstName": "Nombre",
+    "firstNameValidation": "Su nombre",
+    "lastName": "Apellido",
+    "lastNameValidation": "Su apellido",
+    "companion": "Acompañante",
+    "transportTitle": "Transporte",
+    "transportValidation": "Necesita transporte?",
+    "yes": "Si",
     "no": "No",
-    "submitLabel": "submit",
-    "attendanceTitle": "Will you show up?",
-    "attendanceValidation": "Please confirm your attendance"
+    "submitLabel": "Hecho",
+    "attendanceTitle": "Celebramos juntos?",
+    "attendanceValidation": "Por favor confirme su asistencia",
+    "attendingText": "Estaremos felices de celebrar nuestro gran día juntos",
+    "notAttendingText": "Es una lastima que no pueda venir, pero más bebida para los otros 😛"
   },
-
   "present": {
-    "title": "Your best gift, our new life together",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl",
-    "bankText": "If you prefer to give us money, you can transfer it to our bank account"
+    "title": "Tu mejor regalo, nuestra nueva vida juntos",
+    "text": "En la vida hay cosas mucho más importantes que el dinero pero cuestan taaaanto. Gracias!",
+    "bankText": "IBAN:"
   },
-
   "transport": {
-    "title": "Transport",
-    "schedule": "Schedule",
-    "meetingPoint": "Meeting point"
+    "title": "Transporte",
+    "schedule": "Horario",
+    "meetingPoint": "Punto de encuentro: Mercat de Colom"
   },
-  
   "ourStory": {
-    "title": "Our story",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl"
+    "title": "Nuestra historia",
+    "text": "Nos conocimos por primera vez en septiembre de 2021 en una discoteca de Barcelona. Como saben, nos encanta disfrutar de la vida nocturna, y surgió el amor sin buscarlo. No hablamos mucho esa noche, pero George apareció en mis redes sociales, sin embargo, no fue más allá. En diciembre de 2021 ambos fuimos invitados a la fiesta de cumpleaños de un amigo y casualmente nos encontramos nuevamente. Esa noche nuestra conexión creció y comenzamos a salir más, pero las cosas no iban a ninguna parte. Si le preguntas a George, él se esforzaba mucho por captar mi interés, pero yo me hacía “la difícil”. Si me preguntas a mi, en realidad no estaba haciendo nada para resistirme. Después de un tiempo las cosas cambiaron, empezamos a salir más y nos enamoramos, y poco después nos mudamos a vivir juntos. Un año, algunos viajes, un duelo, muchas celebraciones y vivencias después, en diciembre de 2022 en París, la ciudad del amor, se arrodilló en un barco por el Sena (sí, súper romántico), sosteniendo el anillo más hermoso, pidiéndome que me case con él. Nunca había sido tan fácil para mí decir un SÍ antes. Mezclando nuestras cuatro culturas diferentes, con experiencias y estilos de vida anteriores muy diferentes, no siempre ha sido fácil estar de acuerdo en las cosas, pero seguimos adelante aprendiendo y nuestro amor sigue creciendo. Ahora, no podemos esperar más para comenzar nuestra vida como marido y mujer."
   },
-
   "recommendations": {
-    "importantInfoTitle": "Important information",
-    "dressText": "please only wear white",
-    "adultsOnlyText": "This wedding is for adults only but you can bring your kids anyways",
+    "importantInfoTitle": "Información importante",
+    "dressText": "Dress code: Etiqueta/Gala",
+    "adultsOnlyText": "Nos gustan los niños, pero este día queremos compartirlo con los adultos",
     "hotel": {
-      "title": "Hotels",
-      "directionsButtonTitle": "Directions",
-      "reserveButtonTitle": "Reservate",
-      "useVoucherTitle": "Use voucher"
-    },
-    "hotelsList": [
-      {
-      "name": "Hotel Barcelona catedral",
-      "description": "This is a four and half star hotel with poool skrt",
-      "googleMapsLink": "Direction link",
-      "reservationLink": "Reservation link",
-      "voucherCode": "sepidehandgeorge",
-      "voucherAvailabilityTitle": "voucher only available between 13 september and 25 september"
-    }, 
-    {
-      "name": "Hotel Barcelona universal",
-      "description": "this is a universal hotel skrt skrt",
-      "reservationLink": "Reservation link 1",
-      "googleMapsLink": "Direction link",
-      "voucherCode": "sepidehandgeorge",
-      "voucherAvailabilityTitle": "voucher only available between 13 september and 25 september"
-    }]
-  }
+    "title": "Hoteles",
+    "directionsButtonTitle": "Direcciones",
+    "reserveButtonTitle": "Reservar",
+    "useVoucherTitle": "Usar código de descuento"
+  },
+  "hotelsList": [
+  {
+    "name": "Hotel Barcelona Catedral",
+    "description": "Es un hotel de cuatro estrellas con piscina y excelentes vistas en el corazón de Barcelona",
+    "googleMapsLink": "Como llegar",
+    "reservationLink": "Reservas",
+    "voucherCode": "Bcncat",
+    "voucherAvailabilityTitle": "?"
+  },
+  {
+    "name": "Hotel Barcelona Universal",
+    "description": "Situado cerca de la playa, en el corazón de la ciudad",
+    "reservationLink": "Reservas",
+    "googleMapsLink": "Como llegar",
+    "voucherCode": "WEDDINGS&G",
+    "voucherAvailabilityTitle": "?"
+  }]}
 }
-
-

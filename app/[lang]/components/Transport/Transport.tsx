@@ -39,7 +39,9 @@ const OuterContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 48px 0;
-	min-height: 100%;
+	@media (max-width: 768px) {
+		min-height: 100%;
+	}
 `;
 
 const Container = styled.div`

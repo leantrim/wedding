@@ -65,7 +65,9 @@ const OuterContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding-bottom: 12px;
-	min-height: 100%;
+	@media (max-width: 768px) {
+		min-height: 100%;
+	}
 `;
 
 const Info = styled.span`

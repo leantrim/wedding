@@ -1,8 +1,7 @@
-
 {
   "header": {
     "title": "Sepideh & George",
-    "subtitle": "are getting married"
+    "subtitle": "We are getting married!"
   },
 
   "counter": {
@@ -23,11 +22,10 @@
   "menu": {
     "whenAndWhere": "Where and when",
     "rsvp": "RSVP",
-    "present": "Present",
+    "present": "Gift",
     "transport": "Transport",
     "recommendations": "Recommendations"
   },
-
   "form": {
     "info": "Please confirm your attendance by filling out the following form.",
     "firstName": "Name",
@@ -40,31 +38,32 @@
     "yes": "Yes",
     "no": "No",
     "submitLabel": "submit",
-    "attendanceTitle": "Will you show up?",
-    "attendanceValidation": "Please confirm your attendance"
+    "attendanceTitle": "Will you be joining us?",
+    "attendanceValidation": "Please confirm your attendance",          
+    "attendingText": "We are happy to celebrate our big day with you!",
+    "notAttendingText": "Too bad you are not coming, but that means more drinks for the rest 😛"
   },
+
 
   "present": {
     "title": "Your best gift, our new life together",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl",
-    "bankText": "If you prefer to give us money, you can transfer it to our bank account"
+    "text": "We don't want to offend but we have it, all household goods and so much more. To save you shopping, sit back and rest, a gift of currency is our request. Don't go overboard or rob any banks, any little thing will make us smile with thanks.",
+    "bankText": "IBAN: "
   },
 
   "transport": {
     "title": "Transport",
     "schedule": "Schedule",
-    "meetingPoint": "Meeting point"
+    "meetingPoint": "Meeting point: Mercat de Colom"
   },
-  
   "ourStory": {
     "title": "Our story",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget lacinia tincidunt, nisl nisl aliquam nisl, eget aliquam nisl nisl"
+    "text":"We met for the first time in September 2021 at a nightclub in Barcelona. As you know, we love to enjoy the nightlife, and love arose without looking for it. We didn't talk much that night, but George appeared in my DMs on Instagram, however things didn't go much further. In December 2021 we were both invited to a friend's birthday party and casually we ran into each other again. That night our connection grew and we started hanging out more, but things were going nowhere. If you ask George, he tried very hard to capture my interest, but I was playing hard to get. If you ask me, he wasn't really doing anything to stand out. After a while things changed, we started dating more and fell in love, and soon after we moved in together. One year, a few trips, a grief and many celebrations and experiences later, in December 2022 in Paris, the city of love, he went down on one knee on a boat on the Seine (yes, super romantic), holding the most beautiful ring, asking me to marry him. It had never been easier for me to say YES before. Mixing our four different cultures, with very different previous experiences and lifestyles, it hasn't always been easy to agree on things, but we keep learning and our love continues to grow. Now, we can't wait to start our lives as husband and wife."
   },
-
   "recommendations": {
     "importantInfoTitle": "Important information",
-    "dressText": "please only wear white",
-    "adultsOnlyText": "This wedding is for adults only but you can bring your kids anyways",
+    "dressText": "Dress code: Black tie",
+    "adultsOnlyText": "We love children, but this day we want to share with adults",
     "hotel": {
       "title": "Hotels",
       "directionsButtonTitle": "Directions",
@@ -74,21 +73,19 @@
     "hotelsList": [
       {
       "name": "Hotel Barcelona catedral",
-      "description": "This is a four and half star hotel with poool skrt",
+      "description": "This is a four-star hotel with a pool and excellent views in the heart of Barcelona",
       "googleMapsLink": "Direction link",
       "reservationLink": "Reservation link",
-      "voucherCode": "sepidehandgeorge",
-      "voucherAvailabilityTitle": "voucher only available between 13 september and 25 september"
-    }, 
+      "voucherCode": "Bcncat",
+      "voucherAvailabilityTitle": "?"
+    },
     {
       "name": "Hotel Barcelona universal",
-      "description": "this is a universal hotel skrt skrt",
+      "description": "Located near the beach, in the heart of the city",
       "reservationLink": "Reservation link 1",
       "googleMapsLink": "Direction link",
-      "voucherCode": "sepidehandgeorge",
-      "voucherAvailabilityTitle": "voucher only available between 13 september and 25 september"
+      "voucherCode": "WEDDINGS&G",
+      "voucherAvailabilityTitle": "?"
     }]
   }
 }
-
-
