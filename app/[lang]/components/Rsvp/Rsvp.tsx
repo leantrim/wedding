@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
 import { MenusType } from '../../../../types/Menus';
-import { Title } from '../WhenAndWhere/WhenAndWhere';
 import RsvpForm from './RsvpForm';
 
 export type FormData = {
