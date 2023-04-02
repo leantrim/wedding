@@ -91,7 +91,7 @@ const RsvpForm = (props: Props) => {
 					color: '#444',
 				}}
 			>
-				RSV
+				RSVP
 			</Title>
 			<p
 				style={{
