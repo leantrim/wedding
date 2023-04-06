@@ -5,17 +5,39 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { SiteConfig } from './config';
 import { i18n } from '../../i18n-config';
+import mobileHeader from '/public/assets/mobile-header.webp';
+import { Metadata } from 'next';
 config.autoAddCss = false;
-
-export const metadata = {
-	title: 'Sepideh & George',
-	description: 'Sepideh & George',
-};
 
 const karla = Baskervville({ weight: '400', subsets: ['latin'] });
 
 export async function generateStaticParams() {
 	return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
+type Props = {
+	params: { lang: string };
+	searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	console.log(params);
+
+	return {
+		title: 'Sepideh & George',
+		description:
+			params.lang === 'en'
+				? "Sepideh & George are getting married, and you're invited!"
+				: 'Sepideh y George se van a casar, ¡y estás invitado!',
+		openGraph: {
+			title: 'Sepideh & George',
+			images: [mobileHeader.src],
+			description:
+				params.lang === 'en'
+					? "Sepideh & George are getting married, and you're invited!"
+					: 'Sepideh y George se van a casar, ¡y estás invitado!',
+		},
+	};
 }
 
 export default async function Root({
