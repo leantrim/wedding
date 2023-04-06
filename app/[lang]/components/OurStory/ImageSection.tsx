@@ -46,7 +46,7 @@ const ImageSection = () => {
 						height={350}
 						width={300}
 						alt={'imageMiddleLeft'}
-						index={0}
+						index={1}
 					/>
 				</StyledImageStackMiddleLeft>
 				<StyledImageStackTopCenter>
@@ -56,7 +56,7 @@ const ImageSection = () => {
 						height={500}
 						width={400}
 						alt={'imageTopMiddle'}
-						index={1}
+						index={0}
 					/>
 				</StyledImageStackTopCenter>
 				<StyledImageStackMiddleRight>
