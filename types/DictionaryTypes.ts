@@ -35,13 +35,13 @@ export type HotelsListType = {
 	reservationLink: string;
 	googleMapsLink: string;
 	voucherCode: string;
-	voucherAvailabilityTitle: string;
 };
 
 export type TransportType = {
 	title: string;
 	schedule: string;
 	meetingPoint: string;
+	departure: string;
 };
 
 export type PresentType = {

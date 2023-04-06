@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
 import { MenusType } from '../../../../types/Menus';
@@ -21,19 +21,30 @@ const Rsvp = (props: Props) => {
 	const onSubmit = (data: FormData) => {
 		console.log(data);
 	};
+	const [height, setHeight] = useState<number>(0);
+
+	useEffect(() => {
+		// Set initial height on mount
+		setHeight(window.innerHeight);
+	}, []);
 
 	return (
-		<Container id={MenusType.RSVP}>
+		<Container id={MenusType.RSVP} currentHeight={height}>
 			<RsvpForm onSubmit={onSubmit} form={form} />
 		</Container>
 	);
 };
 
-const Container = styled.div`
+type StyleProps = {
+	currentHeight: number;
+};
+
+const Container = styled.div<StyleProps>`
 	@media (max-width: 768px) {
-		display: flex;
-		flex-direction: column;
+		min-height: ${({ currentHeight }) => currentHeight}px;
 		height: 100%;
+		position: relative;
+		padding-bottom: 60px;
 	}
 	padding: 48px 24px;
 	display: flex;

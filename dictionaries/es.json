@@ -48,7 +48,8 @@
   "transport": {
     "title": "Transporte",
     "schedule": "Horario",
-    "meetingPoint": "Punto de encuentro: Mercat de Colom"
+    "meetingPoint": "Punto de encuentro: Mercat de Colom",
+    "departure": "Salida"
   },
   "ourStory": {
     "title": "Nuestra historia",
@@ -70,15 +71,13 @@
     "description": "Es un hotel de cuatro estrellas con piscina y excelentes vistas en el corazón de Barcelona",
     "googleMapsLink": "Como llegar",
     "reservationLink": "Reservas",
-    "voucherCode": "Bcncat",
-    "voucherAvailabilityTitle": "?"
+    "voucherCode": "Bcncat"
   },
   {
     "name": "Hotel Barcelona Universal",
     "description": "Situado cerca de la playa, en el corazón de la ciudad",
     "reservationLink": "Reservas",
     "googleMapsLink": "Como llegar",
-    "voucherCode": "WEDDINGS&G",
-    "voucherAvailabilityTitle": "?"
+    "voucherCode": "WEDDINGS&G"
   }]}
 }

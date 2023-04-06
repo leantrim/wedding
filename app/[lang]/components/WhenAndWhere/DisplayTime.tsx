@@ -9,6 +9,7 @@ type Props = {
 	title: string;
 	icon: IconDefinition;
 	time: string;
+	customIconColor?: string;
 };
 
 const DisplayTime = (props: Props) => {
@@ -23,6 +24,7 @@ const DisplayTime = (props: Props) => {
 				icon={icon}
 				style={{
 					margin: '12px 0',
+					color: props.customIconColor && props.customIconColor,
 				}}
 			/>
 			<span>{time}</span>

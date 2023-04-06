@@ -19,31 +19,10 @@ export default async function IndexPage({
 	return (
 		<>
 			<StyledComponentsRegistry>
-				{/* {bypassPin ? ( */}
 				<div>
 					<Main dictionary={dictionary} />
 					<MenuList menu={dictionary.menu} />
 				</div>
-				{/* ) : (
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							alignItems: 'center',
-							gap: '48px',
-							margin: '24px',
-						}}
-					>
-						<span>PIN? {searchParams?.bypasspin}</span>
-						<title>Website access forbidden</title>
-						<h3>Sepideh And George are getting married!</h3>
-						<h4>
-							Unfortunetly the website is not finished yet, however feel free to
-							check back soon!
-						</h4>
-					</div>
-				)} */}
 			</StyledComponentsRegistry>
 		</>
 	);

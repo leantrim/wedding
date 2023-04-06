@@ -1,14 +1,17 @@
+import { faBus } from '@fortawesome/pro-light-svg-icons';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { TransportType, WhereType } from '../../../../types/DictionaryTypes';
 import { MenusType } from '../../../../types/Menus';
 import { SiteConfig } from '../../config';
+import DisplayTime from '../WhenAndWhere/DisplayTime';
 
 const MeetingPoint = dynamic(() => import('./MeetingPoint'));
 
 type Props = {
 	transport: TransportType;
+	buttonTitle: string;
 };
 
 const Transport = (props: Props) => {
@@ -18,11 +21,20 @@ const Transport = (props: Props) => {
 		<OuterContainer id={MenusType.Transport}>
 			<Container>
 				<ScheduleContainer>
-					<SubTitle style={{ color: SiteConfig.colors.primaryDarker }}>
+					<SubTitle style={{ color: '#5a5247', fontSize: 28 }}>
 						{transport.schedule}
 					</SubTitle>
+					<DisplayTime
+						icon={faBus}
+						time={'16:00'}
+						title={transport.departure}
+						customIconColor={'#5a5247'}
+					/>
 				</ScheduleContainer>
-				<MeetingPoint meetingPoint={transport.meetingPoint} />
+				<MeetingPoint
+					meetingPoint={transport.meetingPoint}
+					buttonTitle={props.buttonTitle}
+				/>
 			</Container>
 		</OuterContainer>
 	);
@@ -54,11 +66,10 @@ const Container = styled.div`
 	width: 100%;
 	margin-left: 12px;
 	margin-right: 12px;
-	gap: 48px;
 `;
 
 export const SubTitle = styled.div`
-	font-size: 28px;
+	font-size: 22px;
 	color: #5a5247;
 `;
 

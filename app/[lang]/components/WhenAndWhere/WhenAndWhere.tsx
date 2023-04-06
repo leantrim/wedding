@@ -62,7 +62,7 @@ export const GetThereContainer = styled.div`
 	padding: 12px;
 	width: 140px;
 	justify-content: center;
-	background-color: rgb(249, 249, 249);
+	background-color: ${SiteConfig.colors.primary};
 	font-weight: bold;
 	font-size: 12px;
 	cursor: pointer;

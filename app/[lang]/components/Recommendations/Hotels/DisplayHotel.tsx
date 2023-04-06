@@ -68,9 +68,6 @@ const DisplayHotel = (props: Props) => {
 						{hotelList.voucherCode}
 					</HotelDescription>
 				</VoucerContainer>
-				<HotelDescription style={{ fontSize: '12px' }}>
-					{hotelList.voucherAvailabilityTitle}
-				</HotelDescription>
 			</InnerHotelContainer>
 		</HotelContainer>
 	);

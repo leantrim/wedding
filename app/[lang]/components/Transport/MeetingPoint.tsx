@@ -5,27 +5,57 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { SubTitle } from './Transport';
 import meetingImage from '/public/assets/meeting-point.jpg';
+import { SiteConfig } from '../../config';
+import { GetThereContainer } from '../WhenAndWhere/WhenAndWhere';
+import { faLocationDot } from '@fortawesome/pro-light-svg-icons';
 
 type Props = {
 	meetingPoint: string;
+	buttonTitle: string;
 };
 
 const MeetingPoint = (props: Props) => {
+	const { buttonTitle } = props;
 	return (
 		<MeetingPointContainer>
 			<SubTitle>{props.meetingPoint}</SubTitle>
 			<StyledIcon icon={faLocation} />
 			<MeetingImageContainer>
-				<StyledImage src={meetingImage.src} fill={true} alt={'map'} />
+				<StyledImage src={meetingImage.src} fill={true} alt={'map'} />{' '}
 			</MeetingImageContainer>
+			<StyledAddress href={SiteConfig.links.googleMaps} target='_blank'>
+				<span>{buttonTitle}</span>
+				<StyledIcon icon={faLocationDot} />
+			</StyledAddress>
 		</MeetingPointContainer>
 	);
 };
+
+const StyledAddress = styled.a`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: ${SiteConfig.colors.primaryDarker};
+	margin-top: 48px;
+	gap: 12px;
+	font-weight: bold;
+	font-size: 12px;
+	cursor: pointer;
+	:hover {
+		box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);
+		transition: 0.3s ease-in-out;
+		transform: translateY(-3px);
+	}
+`;
 
 const MeetingPointContainer = styled.div`
 	color: #5a5247;
 	padding: 16px;
 	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
 	h3 {
 		font-size: 20px;

@@ -36,7 +36,10 @@ const Main = (props: DictionaryTypes) => {
 			<WhenAndWhere where={dictionary.where} />
 			<Rsvp form={dictionary.form} />
 			<Present present={dictionary.present} />
-			<Transport transport={dictionary.transport} />
+			<Transport
+				transport={dictionary.transport}
+				buttonTitle={dictionary.where.buttonTitle}
+			/>
 			<Recommendations recommendations={dictionary.recommendations} />
 			<Footer />
 		</MainContainer>

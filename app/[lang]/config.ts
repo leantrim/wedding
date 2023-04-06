@@ -24,6 +24,6 @@ export const SiteConfig = {
 		},
 	],
 	links: {
-		googleMaps: '',
+		googleMaps: 'https://goo.gl/maps/3McwJ74SBb1ZsExe6',
 	},
 };

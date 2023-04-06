@@ -210,8 +210,7 @@ const Form = styled.form`
 	gap: 12px;
 	max-width: 600px;
 	width: 100%;
-	flex: 1;
-	overflow-y: auto;
+	height: 100%;
 `;
 
 const Row = styled.div`
