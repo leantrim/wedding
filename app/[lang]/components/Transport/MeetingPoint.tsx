@@ -42,6 +42,7 @@ const StyledAddress = styled.a`
 	font-size: 12px;
 	padding-left: 12px;
 	padding-right: 12px;
+	width: 156px;
 	cursor: pointer;
 	:hover {
 		box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);

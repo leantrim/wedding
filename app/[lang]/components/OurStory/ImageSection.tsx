@@ -46,7 +46,7 @@ const ImageSection = () => {
 						height={350}
 						width={300}
 						alt={'imageMiddleLeft'}
-						index={1}
+						index={2}
 					/>
 				</StyledImageStackMiddleLeft>
 				<StyledImageStackTopCenter>
@@ -66,7 +66,7 @@ const ImageSection = () => {
 						height={472}
 						width={304}
 						alt={'imageMiddleRight'}
-						index={2}
+						index={1}
 					/>
 				</StyledImageStackMiddleRight>
 			</StyledImageStack>
@@ -137,7 +137,7 @@ const StyledImage = styled(Image)<ImageProps>`
 	max-height: 384px;
 	object-fit: cover;
 	opacity: 0; // Set the initial opacity to 0
-	transition: opacity 0.5s ease-in-out; // Add a transition for the opacity
+	transition: opacity 1s ease-in-out; // Add a transition for the opacity
 
 	${(props) => `
 		transition-delay: ${props.index * 0.4}s;

@@ -69,6 +69,7 @@ export const GetThereContainer = styled.div`
 	text-align: center;
 	display: flex;
 	align-items: center;
+	width: 156px;
 
 	:hover {
 		box-shadow: 0 20px 38px rgba(0, 0, 0, 0.16);
