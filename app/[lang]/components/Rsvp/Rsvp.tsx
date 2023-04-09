@@ -87,6 +87,10 @@ type StyleProps = {
 };
 
 const Container = styled.div<StyleProps>`
+	padding: 48px 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	${({ formPosted, currentHeight }) =>
 		!formPosted &&
 		`@media (max-width: 768px) {
@@ -94,11 +98,6 @@ const Container = styled.div<StyleProps>`
 		height: 100%;
 		position: relative;
 		padding-bottom: 60px;`}
-
-	padding: 48px 24px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 `;
 
 export default Rsvp;
