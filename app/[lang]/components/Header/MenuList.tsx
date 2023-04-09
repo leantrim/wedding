@@ -88,7 +88,7 @@ const MenuOverlay = styled.div<MenuOverlayProps>`
 	transition: opacity 0.3s ease-in-out;
 `;
 
-const fadeIn = keyframes`
+export const fadeIn = keyframes`
   0% {
     opacity: 0;
     transform: translateY(-20px);

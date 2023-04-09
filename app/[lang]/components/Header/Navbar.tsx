@@ -5,13 +5,22 @@ import { faBarsStaggered } from '@fortawesome/pro-light-svg-icons';
 import MenuList from './MenuList';
 import { AppShellDataContext } from '../../../context/appShellData';
 import { SiteConfig } from '../../config';
+import useCheckMobileScreen from '../../../hooks/isMobile';
+import { MenuType } from '../../../../types/DictionaryTypes';
+import MenuLink from '../common/MenuLink';
+import { MenusType } from '../../../../types/Menus';
 
-const Navbar = () => {
-	// const [menuActive, setMenuActive] = useState<boolean>(false);
+type Props = {
+	menu: MenuType;
+};
+
+const Navbar = (props: Props) => {
+	const { menu } = props;
 	const { menuActive, setMenuActive, headerRef } =
 		useContext(AppShellDataContext);
 	const [isVisible, setHasScrolled] = useState(true);
 	const NavRef = useRef<HTMLDivElement>(null);
+	const isMobile = useCheckMobileScreen();
 
 	const handleClickMenu = () => {
 		setMenuActive(!menuActive);
@@ -42,18 +51,44 @@ const Navbar = () => {
 			>
 				SG
 			</div>
-			<FontAwesomeIcon
-				icon={faBarsStaggered}
-				size={'2x'}
-				style={{
-					marginRight: 6,
-				}}
-				cursor={'pointer'}
-				onClick={() => handleClickMenu()}
-			/>
+			{isMobile ? (
+				<FontAwesomeIcon
+					icon={faBarsStaggered}
+					size={'2x'}
+					style={{
+						marginRight: 6,
+					}}
+					cursor={'pointer'}
+					onClick={() => handleClickMenu()}
+				/>
+			) : (
+				<ListContainer>
+					<MenuLink
+						href={MenusType.WhenAndWhere}
+						title={menu.whenAndWhere}
+						index={0}
+					/>
+					<MenuLink href={MenusType.RSVP} title={menu.rsvp} index={1} />
+					<MenuLink
+						href={MenusType.Transport}
+						title={menu.transport}
+						index={2}
+					/>
+					<MenuLink
+						href={MenusType.Recommendations}
+						title={menu.recommendations}
+						index={3}
+					/>
+				</ListContainer>
+			)}
 		</NavContainer>
 	);
 };
+
+const ListContainer = styled.div`
+	width: fit-content;
+	margin-right: 48px;
+`;
 
 type NavStyle = {
 	isVisible: boolean;

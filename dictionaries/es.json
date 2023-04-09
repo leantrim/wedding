@@ -38,12 +38,14 @@
     "attendanceTitle": "Celebramos juntos?",
     "attendanceValidation": "Por favor confirme su asistencia",
     "attendingText": "Estaremos felices de celebrar nuestro gran día juntos",
-    "notAttendingText": "Es una lastima que no pueda venir, pero más bebida para los otros 😛"
+    "notAttendingText": "Es una lastima que no pueda venir, pero más bebida para los otros 😛",
+    "submitError": "Algo salió mal, por favor actualice la página y si eso no funciona, contacte a Sepideh o George de inmediato.",
+    "submitSuccess": "¡Gracias por enviar su formulario!"
   },
   "present": {
     "title": "Tu mejor regalo, nuestra nueva vida juntos",
     "text": "En la vida hay cosas mucho más importantes que el dinero pero cuestan taaaanto. Gracias!",
-    "bankText": "IBAN:"
+    "bankText": ""
   },
   "transport": {
     "title": "Transporte",

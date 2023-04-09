@@ -21,21 +21,18 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	console.log(params);
+	const description =
+		params.lang === 'en'
+			? "Sepideh & George are getting married, and you're invited!"
+			: 'Sepideh y George se van a casar, ¡y estás invitado!';
 
 	return {
 		title: 'Sepideh & George',
-		description:
-			params.lang === 'en'
-				? "Sepideh & George are getting married, and you're invited!"
-				: 'Sepideh y George se van a casar, ¡y estás invitado!',
+		description: description,
 		openGraph: {
 			title: 'Sepideh & George',
 			images: [mobileHeader.src],
-			description:
-				params.lang === 'en'
-					? "Sepideh & George are getting married, and you're invited!"
-					: 'Sepideh y George se van a casar, ¡y estás invitado!',
+			description: description,
 		},
 	};
 }

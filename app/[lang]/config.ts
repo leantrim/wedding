@@ -9,7 +9,7 @@ export const SiteConfig = {
 	},
 	date: {
 		raw: '2023-09-24T17:30:00',
-		formatted: 'September 13, 2023',
+		formatted: 'September 24, 2023',
 		arrivalTime: '17:00 h.',
 		ceremonyTime: '17:30 h.',
 		celebrationTime: '18:30 h.',

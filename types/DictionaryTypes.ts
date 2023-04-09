@@ -66,6 +66,8 @@ export type FormType = {
 	attendanceValidation: string;
 	attendingText: string;
 	notAttendingText: string;
+	submitError: string;
+	submitSuccess: string;
 };
 
 export type CounterType = {

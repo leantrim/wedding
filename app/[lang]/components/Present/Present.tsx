@@ -44,7 +44,6 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 48px 0;
 	max-width: 800px;
 	margin: 0 18px;
 

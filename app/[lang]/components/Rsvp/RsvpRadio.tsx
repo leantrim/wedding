@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
-import { FormData } from './Rsvp';
+import { RsvpFormData } from '../../../../types/Form';
 import { Error } from './RsvpForm';
 
 type Props = {
-	register: UseFormRegister<FormData>;
-	errors: FieldErrors<FormData>;
+	register: UseFormRegister<RsvpFormData>;
+	errors: FieldErrors<RsvpFormData>;
 	form: FormType;
 	isAttending: boolean;
 };

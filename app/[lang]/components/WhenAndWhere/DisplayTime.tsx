@@ -19,7 +19,7 @@ const DisplayTime = (props: Props) => {
 	`;
 	return (
 		<TimeContainer>
-			<Ceremony>{title}</Ceremony>
+			<Ceremony style={{ color: '#5a5247' }}>{title}</Ceremony>
 			<StyledIcon
 				icon={icon}
 				style={{

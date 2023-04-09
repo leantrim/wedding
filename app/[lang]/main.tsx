@@ -30,7 +30,7 @@ const Main = (props: DictionaryTypes) => {
 				menuActive && setMenuActive(false);
 			}}
 		>
-			<Navbar />
+			<Navbar menu={dictionary.menu} />
 			<Header timer={dictionary.counter} header={dictionary.header} />
 			<OurStory ourStory={dictionary.ourStory} />
 			<WhenAndWhere where={dictionary.where} />
