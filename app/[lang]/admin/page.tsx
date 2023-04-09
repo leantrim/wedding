@@ -4,6 +4,8 @@ import { database } from '../../../lib/firebase';
 import Stats from './Stats';
 import RsvpList from './Table/RsvpList';
 
+export const dynamic = 'force-dynamic';
+
 const dbInstance = collection(database, 'forms');
 const AUTH_KEY = '5U68DWOT9K5pF8TT53pTobAKUsQSmMlUzN8VIji4';
 
@@ -19,6 +21,7 @@ async function fetchData() {
 
 export default async function Page({ params, searchParams }: any) {
 	const data = await fetchData();
+
 	if (searchParams.auth !== AUTH_KEY) {
 		return <div>Not authorized</div>;
 	}
