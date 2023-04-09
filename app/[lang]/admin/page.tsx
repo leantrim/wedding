@@ -3,6 +3,7 @@ import React from 'react';
 import { database } from '../../../lib/firebase';
 import Stats from './Stats';
 import RsvpList from './Table/RsvpList';
+import StyledComponentsRegistry from '../lib/registry';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,10 +28,14 @@ export default async function Page({ params, searchParams }: any) {
 	}
 
 	return (
-		<div style={{ paddingBottom: '48px' }}>
-			Admin Panel - Forms
-			<Stats forms={data} />
-			<RsvpList form={data} />
-		</div>
+		<>
+			<StyledComponentsRegistry>
+				<div style={{ paddingBottom: '48px' }}>
+					Admin Panel - Forms
+					<Stats forms={data} />
+					<RsvpList form={data} />
+				</div>
+			</StyledComponentsRegistry>
+		</>
 	);
 }
