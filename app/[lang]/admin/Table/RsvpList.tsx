@@ -189,8 +189,10 @@ function RsvpList(props: Props) {
 				<DisplayNewForms>
 					<div>
 						Great news, there are{' '}
-						<span style={{ color: 'white' }}>{newForms.length}</span> new forms
-						submitted since you last viewed!
+						<StyledNumber style={{ color: 'white' }}>
+							{newForms.length}
+						</StyledNumber>{' '}
+						new forms submitted since you last viewed!
 					</div>
 					<Button
 						onClick={() => {
@@ -223,25 +225,24 @@ function RsvpList(props: Props) {
 						onChange={handleSearchTermChange}
 					/>
 				</div>
-				<div style={{ display: 'flex', gap: '24px' }}>
+				<ShowMoreContainer>
 					<label htmlFor='itemsPerPage'>
-						Items per page:{' '}
-						<span style={{ fontWeight: 'bold' }}>{itemsPerPage}</span>
+						Items per page: <StyledNumber>{itemsPerPage}</StyledNumber>
 					</label>
 					{forms.length > paginatedForm.length && (
 						<Button onClick={() => setItemsPerPage(itemsPerPage + 10)}>
-							Show <span style={{ fontWeight: 'bold' }}>+10</span> more
+							Show <StyledNumber>+10</StyledNumber> more
 						</Button>
 					)}
 					{itemsPerPage > 10 && (
 						<Button onClick={() => setItemsPerPage(itemsPerPage - 10)}>
-							Show <span style={{ fontWeight: 'bold' }}>-10</span> less
+							Show <StyledNumber>-10</StyledNumber> less
 						</Button>
 					)}
 					<Button onClick={() => setItemsPerPage(forms.length)}>
 						Show all
 					</Button>
-				</div>
+				</ShowMoreContainer>
 			</SearchDiv>
 			<StyledTable>
 				<StyledHeader>
@@ -316,7 +317,7 @@ function RsvpList(props: Props) {
 					))}
 				</tbody>
 			</StyledTable>
-			<div>
+			<PaginationContainer>
 				{Array.from(
 					{ length: Math.ceil(filteredForm.length / itemsPerPage) },
 					(_, index) => (
@@ -332,10 +333,23 @@ function RsvpList(props: Props) {
 						</Button>
 					)
 				)}
-			</div>
+			</PaginationContainer>
 		</Container>
 	);
 }
+
+const ShowMoreContainer = styled.div`
+	display: flex;
+	gap: 24px;
+`;
+
+const StyledNumber = styled.span`
+	font-weight: bold;
+`;
+
+const PaginationContainer = styled.div`
+	padding: 12px 0;
+`;
 
 const DisplayNewForms = styled.div`
 	background-color: #62ce62;

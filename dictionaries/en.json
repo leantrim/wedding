@@ -51,7 +51,8 @@
   "present": {
     "title": "Your best gift, our new life together",
     "text": "We don't want to offend but we have it, all household goods and so much more. To save you shopping, sit back and rest, a gift of currency is our request. Don't go overboard or rob any banks, any little thing will make us smile with thanks.",
-    "bankText": ""
+    "bankText": "",
+    "thankYou": "Thank you"
   },
 
   "transport": {

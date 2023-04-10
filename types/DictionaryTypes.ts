@@ -48,6 +48,7 @@ export type PresentType = {
 	title: string;
 	text: string;
 	bankText: string;
+	thankYou: string;
 };
 
 export type FormType = {

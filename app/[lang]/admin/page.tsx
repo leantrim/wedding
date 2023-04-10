@@ -4,6 +4,7 @@ import { database } from '../../../lib/firebase';
 import Stats from './Stats';
 import RsvpList from './Table/RsvpList';
 import StyledComponentsRegistry from '../lib/registry';
+import { SiteConfig } from '../config';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,7 +32,16 @@ export default async function Page({ params, searchParams }: any) {
 		<>
 			<StyledComponentsRegistry>
 				<div style={{ paddingBottom: '48px' }}>
-					Admin Panel - Forms
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'center',
+							padding: '12px 0',
+							fontSize: '2rem',
+						}}
+					>
+						Admin Panel - Forms
+					</div>
 					<Stats forms={data} />
 					<RsvpList form={data} />
 				</div>

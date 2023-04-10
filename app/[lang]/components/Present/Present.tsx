@@ -25,7 +25,7 @@ const Present = ({ present }: Props) => {
 				<BankSektion>{present.bankText}</BankSektion>
 				<BankSektion>{SiteConfig.iban}</BankSektion>
 			</Container>
-			<HeartBeatLine />
+			<HeartBeatLine title={present.thankYou} />
 		</OuterContainer>
 	);
 };

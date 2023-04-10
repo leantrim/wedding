@@ -46,7 +46,8 @@
   "present": {
     "title": "Tu mejor regalo, nuestra nueva vida juntos",
     "text": "En la vida hay cosas mucho más importantes que el dinero pero cuestan taaaanto. Gracias!",
-    "bankText": ""
+    "bankText": "",
+    "thankYou": "Gracias"
   },
   "transport": {
     "title": "Transporte",

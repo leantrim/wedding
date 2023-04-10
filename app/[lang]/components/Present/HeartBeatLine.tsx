@@ -4,12 +4,16 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { SiteConfig } from '../../config';
 
-const HeartBeatLine = () => {
+type Props = {
+	title: string;
+};
+
+const HeartBeatLine = ({ title }: Props) => {
 	return (
 		<HeartbeatContainer>
 			<HeartIconContainer>
 				<StyledIcon icon={faHeart} scale={1} />
-				<ThankYouText>Thank you</ThankYouText>
+				<ThankYouText>{title}</ThankYouText>
 			</HeartIconContainer>
 		</HeartbeatContainer>
 	);
