@@ -40,7 +40,8 @@
     "attendingText": "Estaremos felices de celebrar nuestro gran día juntos",
     "notAttendingText": "Es una lastima que no pueda venir, pero más bebida para los otros 😛",
     "submitError": "Algo salió mal, por favor actualice la página y si eso no funciona, contacte a Sepideh o George de inmediato.",
-    "submitSuccess": "¡Gracias por enviar su formulario!"
+    "submitSuccess": "¡Gracias por enviar su formulario!",
+    "transportTip": "haz clic aquí para obtener más información sobre el transporte"
   },
   "present": {
     "title": "Tu mejor regalo, nuestra nueva vida juntos",

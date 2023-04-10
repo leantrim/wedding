@@ -1,13 +1,14 @@
 import { Roboto } from 'next/font/google';
 
-const description =
-	'WARNING !!! DO NOT SHARE THIS LINK WITH ANYONE AS THEY WILL BE GRANTED ACCESS TO ALL THE FORMS. WARNING !!!';
 export const metadata = {
 	title: 'Admin panel | Sepideh & George',
-	description: description,
+	description: 'Admin panel for all forms',
 	openGraph: {
-		title: 'Admin panel | DO NOT SHARE LINK WITH ANYONE!',
-		description: description,
+		title: 'Admin panel | Sepideh & George',
+		description:
+			'Anyone with this link can see all forms submitted, so carefull with who you share.',
+		url: 'https://sepidehandgeorge.com/en/admin',
+		siteName: 'Sepideh & George',
 	},
 };
 

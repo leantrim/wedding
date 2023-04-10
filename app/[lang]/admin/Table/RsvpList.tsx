@@ -64,7 +64,7 @@ function RsvpList(props: Props) {
 
 	const [attendingFilter, setAttendingFilter] = useState<boolean | null>(null);
 	const [transportFilter, setTransportFilter] = useState<boolean | null>(null);
-	const [dateSortDescending, setSortDescending] = useState(false);
+	const [dateSortDescending, setSortDescending] = useState(true);
 	const [forms, setForms] = useState<RsvpFormData[]>(form);
 	const [testForms, setTestForms] = useLocalStorage('forms', []);
 	const [searchTerm, setSearchTerm] = useState('');

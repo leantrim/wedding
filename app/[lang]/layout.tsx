@@ -33,6 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			title: 'Sepideh & George',
 			images: [mobileHeader.src],
 			description: description,
+			url: 'https://sepidehandgeorge.com',
+			siteName: 'Sepideh & George',
+			type: 'website',
+			alternateLocale: params.lang,
 		},
 	};
 }

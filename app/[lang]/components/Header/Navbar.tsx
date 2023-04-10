@@ -16,8 +16,7 @@ type Props = {
 
 const Navbar = (props: Props) => {
 	const { menu } = props;
-	const { menuActive, setMenuActive, headerRef } =
-		useContext(AppShellDataContext);
+	const { menuActive, setMenuActive } = useContext(AppShellDataContext);
 	const [isVisible, setHasScrolled] = useState(true);
 	const NavRef = useRef<HTMLDivElement>(null);
 	const isMobile = useCheckMobileScreen();
@@ -42,7 +41,12 @@ const Navbar = (props: Props) => {
 	}, []);
 
 	return (
-		<NavContainer isVisible={isVisible} ref={NavRef} menuActive={menuActive}>
+		<NavContainer
+			isVisible={isVisible}
+			ref={NavRef}
+			menuActive={menuActive}
+			isMobile={isMobile}
+		>
 			<div
 				style={{
 					marginLeft: 6,
@@ -93,10 +97,11 @@ const ListContainer = styled.div`
 type NavStyle = {
 	isVisible: boolean;
 	menuActive: boolean;
+	isMobile: boolean;
 };
 
 const NavContainer = styled.div<NavStyle>`
-	position: fixed;
+	position: absolute;
 	z-index: 99;
 	height: 52px;
 	width: 100%;
@@ -116,6 +121,7 @@ const NavContainer = styled.div<NavStyle>`
       		box-shadow: 0 3px 45px rgba(0, 0, 0, 0.15);
 	  		color: ${SiteConfig.colors.secondary}; 
 		`}
+	${(props) => props.isMobile && ` position: fixed; `}
 `;
 
 export default Navbar;

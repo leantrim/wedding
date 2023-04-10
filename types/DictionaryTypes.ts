@@ -68,6 +68,7 @@ export type FormType = {
 	notAttendingText: string;
 	submitError: string;
 	submitSuccess: string;
+	transportTip: string;
 };
 
 export type CounterType = {

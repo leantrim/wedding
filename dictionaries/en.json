@@ -43,7 +43,8 @@
     "attendingText": "We are happy to celebrate our big day with you!",
     "notAttendingText": "Too bad you are not coming, but that means more drinks for the rest 😛",
     "submitError": "Something went wrong, please refresh the page and if that dont work contact Sepideh or George immidietly.",
-    "submitSuccess": "Gracias por enviar el formulario"
+    "submitSuccess": "Thank you for submitting your RSVP",
+    "transportTip": "click here for more info regarding transport"
   },
 
 

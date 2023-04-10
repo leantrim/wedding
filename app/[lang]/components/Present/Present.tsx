@@ -63,7 +63,8 @@ const OuterContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 12px;
+	padding-bottom: 48px;
+	padding-top: 48px;
 	@media (max-width: 768px) {
 		min-height: 100%;
 	}

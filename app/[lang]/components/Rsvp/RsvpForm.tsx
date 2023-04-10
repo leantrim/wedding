@@ -173,7 +173,7 @@ const RsvpForm = (props: Props) => {
 									textDecoration: 'underline',
 								}}
 							>
-								<span>click here for more info regarding transport!</span>
+								<span>{form.transportTip}</span>
 							</a>
 						)}
 					</LabelDiv>

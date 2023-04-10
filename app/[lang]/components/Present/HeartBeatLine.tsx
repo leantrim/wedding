@@ -27,9 +27,7 @@ const HeartbeatContainer = styled.div`
 	position: relative;
 	width: 100%;
 	height: 60px;
-	@media (min-width: 768px) {
-		margin-bottom: 48px;
-	}
+	margin-top: 24px;
 `;
 const pulse = keyframes`
   0% {
