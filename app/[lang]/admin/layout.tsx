@@ -1,4 +1,5 @@
 import { Roboto } from 'next/font/google';
+import formImage from '/public/assets/wedding_form_image.png';
 
 export const metadata = {
 	title: 'Admin panel | Sepideh & George',
@@ -9,6 +10,7 @@ export const metadata = {
 			'Anyone with this link can see all forms submitted, so carefull with who you share.',
 		url: 'https://sepidehandgeorge.com/en/admin',
 		siteName: 'Sepideh & George',
+		images: [formImage.src],
 	},
 };
 
