@@ -4,9 +4,8 @@ import { faLocation } from '@fortawesome/pro-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { SubTitle } from './Transport';
-import meetingImage from '/public/assets/meeting-point.jpg';
+import meetingImage from '/public/assets/meeting-point.webp';
 import { SiteConfig } from '../../config';
-import { GetThereContainer } from '../WhenAndWhere/WhenAndWhere';
 import { faLocationDot } from '@fortawesome/pro-light-svg-icons';
 
 type Props = {

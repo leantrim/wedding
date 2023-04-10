@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import imageMiddleRight from '/public/assets/ourstory/2.jpg';
-import imageMiddleLeft from '/public/assets/ourstory/1.jpg';
-import imageTopMiddle from '/public/assets/ourstory/3.jpg';
+import imageMiddleRight from '/public/assets/ourstory/2.webp';
+import imageMiddleLeft from '/public/assets/ourstory/1.webp';
+import imageTopMiddle from '/public/assets/ourstory/3.webp';
 
 const ImageSection = () => {
 	const [isVisible, setIsVisible] = useState(false);

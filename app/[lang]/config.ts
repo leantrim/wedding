@@ -1,5 +1,5 @@
-import catedralImg from '/public/assets/hotels/catedral.jpg';
-import universalImg from '/public/assets/hotels/universal.jpg';
+import catedralImg from '/public/assets/hotels/catedral.webp';
+import universalImg from '/public/assets/hotels/universal.webp';
 
 export const SiteConfig = {
 	colors: {
