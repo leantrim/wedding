@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import Navbar from './components/Header/Navbar';
 import Transport from './components/Transport/Transport';
+import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 const WhenAndWhere = dynamic(
 	() => import('./components/WhenAndWhere/WhenAndWhere')
@@ -30,6 +31,7 @@ const Main = (props: DictionaryTypes) => {
 				menuActive && setMenuActive(false);
 			}}
 		>
+			<GoogleAnalytics gaMeasurementId='G-76D6W3K1BY' />
 			<Navbar menu={dictionary.menu} />
 			<Header timer={dictionary.counter} header={dictionary.header} />
 			<OurStory ourStory={dictionary.ourStory} />
