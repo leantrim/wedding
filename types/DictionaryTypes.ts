@@ -24,6 +24,7 @@ export type OurStoryType = {
 };
 
 export type HotelType = {
+	title: string;
 	directionsButtonTitle: string;
 	reserveButtonTitle: string;
 	useVoucherTitle: string;

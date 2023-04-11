@@ -20,7 +20,7 @@ const Hotels = (props: Props) => {
 	return (
 		<Container>
 			<StyledIcon icon={faLocationDot} style={{ fontSize: 64 }} />
-			<Title>Hotels</Title>
+			<Title>{hotel.title}</Title>
 			<HotelsContainer>
 				{hotelList.map((hotelSettings, index) => (
 					<DisplayHotel
