@@ -38,6 +38,7 @@ const Transport = (props: Props) => {
 					marginTop: '12px',
 					fontStyle: 'italic',
 					color: 'grey',
+					textAlign: 'center',
 				}}
 			>
 				{transport.returnInfo}
