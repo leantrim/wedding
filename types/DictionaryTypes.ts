@@ -42,6 +42,7 @@ export type TransportType = {
 	schedule: string;
 	meetingPoint: string;
 	departure: string;
+	returnInfo: string;
 };
 
 export type PresentType = {

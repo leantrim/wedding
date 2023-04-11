@@ -31,7 +31,10 @@ const Main = (props: DictionaryTypes) => {
 				menuActive && setMenuActive(false);
 			}}
 		>
-			<GoogleAnalytics gaMeasurementId='G-76D6W3K1BY' />
+			<GoogleAnalytics
+				gaMeasurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+				strategy='lazyOnload'
+			/>
 			<Navbar menu={dictionary.menu} />
 			<Header timer={dictionary.counter} header={dictionary.header} />
 			<OurStory ourStory={dictionary.ourStory} />

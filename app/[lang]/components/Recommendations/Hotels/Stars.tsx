@@ -10,7 +10,6 @@ const Stars = () => {
 			<StyledStar icon={faStar} />
 			<StyledStar icon={faStar} />
 			<StyledStar icon={faStar} />
-			<StyledStar icon={faStarHalf} />
 		</StarContainer>
 	);
 };

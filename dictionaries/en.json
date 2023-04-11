@@ -59,7 +59,8 @@
     "title": "Transport",
     "schedule": "Schedule",
     "meetingPoint": "Meeting point: Mercat de Colom",
-    "departure": "Departure"
+    "departure": "Departure",
+    "returnInfo": "The return schedule will be available on the day of the wedding at the venue"
   },
   "ourStory": {
     "title": "Our story",
@@ -80,13 +81,13 @@
       "name": "Hotel Barcelona catedral",
       "description": "This is a four-star hotel with a pool and excellent views in the heart of Barcelona",
       "googleMapsLink": "https://www.google.com/maps/dir//Hotel+Barcelona+Catedral,+Carrer+dels+Capellans,+Barcelona,+Spanien/@41.3848067,2.1400929,13z/data=!3m1!5s0x12a4a25c3d57737b:0x679ccf9f45263e2c!4m8!4m7!1m0!1m5!1m1!1s0x12a4a2f9ef4e1c99:0xf537fa5f9cae2874!2m2!1d2.1750735!2d41.3848",
-      "reservationLink": "Reservation link",
+      "reservationLink": "https://www.barcelonacatedral.com/en/",
       "voucherCode": "Bcncat"
     },
     {
       "name": "Hotel Barcelona universal",
       "description": "Located near the beach, in the heart of the city",
-      "reservationLink": "Reservation link 1",
+      "reservationLink": "https://www.hotelbarcelonauniversal.com/en/",
       "googleMapsLink": "https://www.google.com/maps/dir//hotel+barcelona+universal/@48.1716732,-1.3516858,5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12a4a25c16151bcf:0xb0f5d677cd65f257!2m2!1d2.1683286!2d41.3752385",
       "voucherCode": "WEDDINGS&G"
     }]

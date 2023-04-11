@@ -22,7 +22,10 @@ const MeetingPoint = (props: Props) => {
 			<MeetingImageContainer>
 				<StyledImage src={meetingImage.src} fill={true} alt={'map'} />{' '}
 			</MeetingImageContainer>
-			<StyledAddress href={SiteConfig.links.googleMaps} target='_blank'>
+			<StyledAddress
+				href={SiteConfig.links.googleMapsMeetingPoint}
+				target='_blank'
+			>
 				<span>{buttonTitle}</span>
 				<StyledIcon icon={faLocationDot} />
 			</StyledAddress>

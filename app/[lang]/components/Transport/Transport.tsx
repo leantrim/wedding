@@ -33,6 +33,15 @@ const Transport = (props: Props) => {
 					buttonTitle={props.buttonTitle}
 				/>
 			</Container>
+			<span
+				style={{
+					marginTop: '12px',
+					fontStyle: 'italic',
+					color: 'grey',
+				}}
+			>
+				{transport.returnInfo}
+			</span>
 		</OuterContainer>
 	);
 };
@@ -45,6 +54,7 @@ const ScheduleContainer = styled.div`
 const OuterContainer = styled.div`
 	background-color: ${SiteConfig.colors.primary};
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 48px 0;

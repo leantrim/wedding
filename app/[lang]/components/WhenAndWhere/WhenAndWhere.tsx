@@ -25,11 +25,20 @@ const WhenAndWhere = (props: Props) => {
 		>
 			<Container id={MenusType.WhenAndWhere}>
 				<Title>{where.title}</Title>
+				<span
+					style={{
+						fontStyle: 'italic',
+						color: 'grey',
+						marginBottom: '12px',
+					}}
+				>
+					Mas de Sant Lleí
+				</span>
 				<Date>{SiteConfig.date.formatted}</Date>
 				<InnerContainer>
 					<Venue />
 					<ThereAndWhenContainer>
-						<a href={SiteConfig.links.googleMaps} target='_blank'>
+						<a href={SiteConfig.links.googleMapsVenue} target='_blank'>
 							<GetThereContainer>
 								<span>{where.buttonTitle}</span>
 								<StyledIcon icon={faLocationDot} />
