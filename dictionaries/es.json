@@ -58,7 +58,7 @@
     "thankYou": "Gracias"
   },
   "transport": {
-    "title": "Transporte",
+    "title": "¿Necesitarás servicio de transporte?",
     "schedule": "Horario",
     "meetingPoint": "Punto de encuentro: Mercat de Colom",
     "departure": "Salida",
@@ -70,7 +70,7 @@
   },
   "recommendations": {
     "importantInfoTitle": "Información importante",
-    "dressText": "Dress code: Etiqueta/Gala",
+    "dressText": "Dress code: Etiqueta/Gala. Le rogamos que evite los colores blanco y negro",
     "adultsOnlyText": "Nos gustan los niños, pero este día queremos compartirlo con los adultos",
     "hotel": {
     "title": "Hoteles",
