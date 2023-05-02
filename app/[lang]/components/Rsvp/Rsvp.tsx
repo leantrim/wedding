@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
 import { MenusType } from '../../../../types/Menus';
 import RsvpForm from './RsvpForm';
-import Modal from '../common/Modal';
 import { Title } from '../WhenAndWhere/WhenAndWhere';
 import { RsvpFormData } from '../../../../types/Form';
 import { database } from '../../../../lib/firebase';
@@ -24,13 +23,9 @@ const Rsvp = (props: Props) => {
 	const [height, setHeight] = useState<number>(0);
 	const [formPosted, setFormPosted] = useState(false);
 	const [error, setError] = useState('');
-	const [formData, setFormData] = useState<RsvpFormData>({} as RsvpFormData);
+	const [isAttending, setIsAttending] = useState<boolean>(false);
 
 	const onSubmit = async (data: RsvpFormData) => {
-		if (!data.transport) {
-			data.transport = 'false';
-		}
-		setFormData(data);
 		setFormPosted(true);
 
 		addDoc(dbInstance, {
@@ -53,9 +48,15 @@ const Rsvp = (props: Props) => {
 			id={MenusType.RSVP}
 			currentHeight={height}
 			formPosted={formPosted}
+			isAttending={isAttending}
 		>
 			{!formPosted ? (
-				<RsvpForm onSubmit={onSubmit} form={form} />
+				<RsvpForm
+					onSubmit={onSubmit}
+					form={form}
+					isAttending={isAttending}
+					setIsAttending={setIsAttending}
+				/>
 			) : (
 				<ModalContainer>
 					{!error ? (
@@ -84,6 +85,7 @@ const ModalContainer = styled.div`
 type StyleProps = {
 	currentHeight: number;
 	formPosted: boolean;
+	isAttending: boolean;
 };
 
 const Container = styled.div<StyleProps>`
@@ -91,8 +93,9 @@ const Container = styled.div<StyleProps>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	${({ formPosted, currentHeight }) =>
+	${({ formPosted, currentHeight, isAttending }) =>
 		!formPosted &&
+		!isAttending &&
 		`@media (max-width: 768px) {
 		min-height: ${currentHeight}px;
 		height: 100%;

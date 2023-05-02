@@ -29,7 +29,7 @@
     "firstNameValidation": "Su nombre",
     "lastName": "Apellido",
     "lastNameValidation": "Su apellido",
-    "companion": "Acompañante",
+    "companion": "¿Vienes con acompañante/s?",
     "transportTitle": "Transporte",
     "transportValidation": "Necesita transporte?",
     "yes": "Si",
@@ -41,7 +41,15 @@
     "notAttendingText": "Es una lastima que no pueda venir, pero más bebida para los otros 😛",
     "submitError": "Algo salió mal, por favor actualice la página y si eso no funciona, contacte a Sepideh o George de inmediato.",
     "submitSuccess": "¡Gracias por enviar su formulario!",
-    "transportTip": "haz clic aquí para obtener más información sobre el transporte"
+    "transportTip": "haz clic aquí para obtener más información sobre el transporte",
+    "radioValidation": "Please select an option",
+    "attendeAllergiesTitle": "¿Tiene alergias o intolerancias?",
+    "specificAllergieQuestion": "Detalle sus alergias o intolerancias",
+    "formAttendeDetailsTitle": "Detalles",
+    "textFieldValidation": "Input cannot be empty",
+    "companionTitle": "ACCOMPANANTES",
+    "companionAllergiesTitle": "Detalle las alergias o intolerancias del acompañante",
+    "companionNameTitle": "Nombre del acompanante"
   },
   "present": {
     "title": "Tu mejor regalo, nuestra nueva vida juntos",

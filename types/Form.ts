@@ -1,11 +1,20 @@
 export type RsvpFormData = {
 	name: string;
 	surname: string;
-	companion?: string;
-	transport: transport;
-	attendance: transport;
+	transport: BooleanStringValue;
+	attendance: BooleanStringValue;
+	allergies?: BooleanStringValue;
+	allergiesDetails?: string;
+	menu?: Menu;
 	id?: string;
 	date?: string;
+	companion?: BooleanStringValue;
+	companionAllergies?: BooleanStringValue;
+	companionAllergiesDetails?: string;
+	companionMenu?: Menu;
+	companionName?: string;
 };
 
-type transport = 'true' | 'false';
+export type Menu = 'vegetarian' | 'conventional';
+
+type BooleanStringValue = 'true' | 'false';

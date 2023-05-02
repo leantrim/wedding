@@ -14,7 +14,8 @@ export const SiteConfig = {
 		ceremonyTime: '17:30 h.',
 		celebrationTime: '18:30 h.',
 	},
-	iban: 'IBAN: NL 91 ABNA 0467 0000 01',
+	iban: 'ES1121002904040288728452',
+	bic: 'CAIXESBBXXX',
 	hotels: [
 		{
 			image: catedralImg.src,

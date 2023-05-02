@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import styled from 'styled-components';
-import { FormType } from '../../../../types/DictionaryTypes';
-import { RsvpFormData } from '../../../../types/Form';
-import { Error } from './RsvpForm';
+import { FormType } from '../../../../../types/DictionaryTypes';
+import { RsvpFormData } from '../../../../../types/Form';
+import { Error } from './Styles';
 
 type Props = {
 	register: UseFormRegister<RsvpFormData>;

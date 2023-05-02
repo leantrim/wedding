@@ -31,8 +31,8 @@
     "firstName": "Name",
     "firstNameValidation": "Please enter your name",
     "lastName": "Lastname",
-    "lastNameValidation": "Please enter your name",
-    "companion": "Companion",
+    "lastNameValidation": "Please enter your surname",
+    "companion": "Will you bring companion?",
     "transportTitle": "Transport",
     "transportValidation": "Transport is required",
     "yes": "Yes",
@@ -44,7 +44,15 @@
     "notAttendingText": "Too bad you are not coming, but that means more drinks for the rest 😛",
     "submitError": "Something went wrong, please refresh the page and if that dont work contact Sepideh or George immidietly.",
     "submitSuccess": "Thank you for submitting your RSVP",
-    "transportTip": "click here for more info regarding transport"
+    "transportTip": "click here for more info regarding transport",
+    "radioValidation": "Please select an option",
+    "attendeAllergiesTitle": "Do you have allergies or intollerances?",
+    "specificAllergieQuestion": "Details for alergies and intollerances",
+    "formAttendeDetailsTitle": "Details",
+    "textFieldValidation": "Input cannot be empty",
+    "companionTitle": "ACCOMPANANTES",
+    "companionAllergiesTitle": "Detail the allergies or intolerances of the companion",
+    "companionNameTitle": "Companion name"
   },
 
 

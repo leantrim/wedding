@@ -23,7 +23,8 @@ const Present = ({ present }: Props) => {
 				<Info>{present.text}</Info>
 				<Line width='70%' color={SiteConfig.colors.secondary} height='1px' />
 				<BankSektion>{present.bankText}</BankSektion>
-				<BankSektion>{SiteConfig.iban}</BankSektion>
+				<BankSektion>IBAN: {SiteConfig.iban}</BankSektion>
+				<BankSektion>BIC: {SiteConfig.bic}</BankSektion>
 			</Container>
 			<HeartBeatLine title={present.thankYou} />
 		</OuterContainer>

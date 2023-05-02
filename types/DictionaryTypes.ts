@@ -59,7 +59,6 @@ export type FormType = {
 	firstNameValidation: string;
 	lastName: string;
 	lastNameValidation: string;
-	companion: string;
 	transportTitle: string;
 	transportValidation: string;
 	yes: string;
@@ -72,6 +71,15 @@ export type FormType = {
 	submitError: string;
 	submitSuccess: string;
 	transportTip: string;
+	radioValidation: string;
+	attendeAllergiesTitle: string;
+	specificAllergieQuestion: string;
+	formAttendeDetailsTitle: string;
+	textFieldValidation: string;
+	companion: string;
+	companionTitle: string;
+	companionAllergiesTitle: string;
+	companionNameTitle: string;
 };
 
 export type CounterType = {
