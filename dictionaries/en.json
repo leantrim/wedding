@@ -64,7 +64,7 @@
   },
 
   "transport": {
-    "title": "Transport",
+    "title": "Will you need transport service?",
     "schedule": "Schedule",
     "meetingPoint": "Meeting point: Mercat de Colom",
     "departure": "Departure",

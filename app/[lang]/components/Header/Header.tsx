@@ -8,6 +8,9 @@ import mobileHeader from '/public/assets/mobile-header.webp';
 import { useContext } from 'react';
 import { SiteConfig } from '../../config';
 import { CounterType, HeaderType } from '../../../../types/DictionaryTypes';
+import { Dancing_Script } from 'next/font/google';
+
+const dancingScript = Dancing_Script({ weight: '400', subsets: ['latin'] });
 
 type Props = {
 	timer: CounterType;
@@ -22,7 +25,7 @@ export default function Header(props: Props) {
 		<StyledHeader ref={headerRef}>
 			<TextContainer>
 				<OurWeddingContainer>
-					<Title>{header.title}</Title>
+					<Title className={dancingScript.className}>{header.title}</Title>
 					<Subtitle>{header.subtitle}</Subtitle>
 					<Date>{SiteConfig.date.formatted}</Date>
 				</OurWeddingContainer>
