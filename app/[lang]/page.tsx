@@ -1,9 +1,11 @@
+import { Baskervville } from 'next/font/google';
 import { ParsedUrlQuery } from 'querystring';
 import { getDictionary } from '../../get-dictionary';
 import { Locale } from '../../i18n-config';
 import MenuList from './components/Header/MenuList';
 import StyledComponentsRegistry from './lib/registry';
 import Main from './main';
+const karla = Baskervville({ weight: '400', subsets: ['latin'] });
 
 type IndexPageProps = {
 	params: { lang: Locale; slug: string };
@@ -19,7 +21,7 @@ export default async function IndexPage({
 	return (
 		<>
 			<StyledComponentsRegistry>
-				<div>
+				<div className={karla.className}>
 					<Main dictionary={dictionary} />
 					<MenuList menu={dictionary.menu} />
 				</div>

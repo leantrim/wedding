@@ -49,7 +49,7 @@ export default async function Root({
 	params: { lang: string };
 }) {
 	return (
-		<html lang={params.lang} className={karla.className}>
+		<html lang={params.lang}>
 			<AppShellDataContextProvider>
 				<body style={{ backgroundColor: SiteConfig.colors.primary }}>
 					{children}
