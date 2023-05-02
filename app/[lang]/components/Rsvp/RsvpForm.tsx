@@ -137,8 +137,6 @@ const RsvpForm = (props: Props) => {
 		setIsPageLoaded(true);
 	}, []);
 
-	console.table(errors);
-
 	return (
 		<>
 			<Form onSubmit={handleSubmit(onSubmit)}>

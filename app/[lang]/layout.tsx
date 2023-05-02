@@ -51,7 +51,7 @@ export default async function Root({
 	return (
 		<html lang={params.lang} className={karla.className}>
 			<AppShellDataContextProvider>
-				<body style={{ backgroundColor: SiteConfig.colors.primary }} className={karla.className}>
+				<body style={{ backgroundColor: SiteConfig.colors.primary }}>
 					{children}
 				</body>
 			</AppShellDataContextProvider>
