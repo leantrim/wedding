@@ -112,7 +112,7 @@ export const StyledRadio = styled.input.attrs({ type: 'radio' })`
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 4px;
-	background-color: #ebe7e1;
+	background-color: #c1b5a3;
 	border-radius: 0;
 
 	&:checked {

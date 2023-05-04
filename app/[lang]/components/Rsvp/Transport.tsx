@@ -1,5 +1,6 @@
 import React from 'react';
 import { FieldErrors, UseFormRegister, UseFormWatch } from 'react-hook-form';
+import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
 import { RsvpFormData } from '../../../../types/Form';
 import { MenusType } from '../../../../types/Menus';
@@ -16,6 +17,7 @@ const Transport = (props: Props) => {
 	const { errors, register, form, watch } = props;
 
 	const watchTransport = watch('transport', 'false');
+	console.log(form.transportTitle);
 
 	return (
 		<div>
@@ -29,19 +31,18 @@ const Transport = (props: Props) => {
 			/>
 
 			{watchTransport === 'true' && (
-				<a
-					href={`#${MenusType.Transport}`}
-					style={{
-						marginTop: '12px',
-						marginBottom: '12px',
-						textDecoration: 'underline',
-					}}
-				>
+				<StyledA href={`#${MenusType.Transport}`}>
 					<span>{form.transportTip}</span>
-				</a>
+				</StyledA>
 			)}
 		</div>
 	);
 };
+
+const StyledA = styled.a`
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-decoration: underline;
+`;
 
 export default Transport;

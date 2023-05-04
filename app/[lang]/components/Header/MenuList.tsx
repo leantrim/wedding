@@ -86,6 +86,7 @@ const MenuOverlay = styled.div<MenuOverlayProps>`
 	width: 100%;
 	opacity: ${(props) => (props.menuActive ? 1 : 0)};
 	transition: opacity 0.3s ease-in-out;
+	z-index: ${(props) => !props.menuActive && !props.isTop && -1};
 `;
 
 export const fadeIn = keyframes`

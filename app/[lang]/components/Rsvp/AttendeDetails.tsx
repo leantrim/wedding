@@ -26,6 +26,7 @@ type Props = {
 	textFieldRegisterType: keyof RsvpFormData;
 	radioTitle: string;
 	allergieTextFieldTitle: string;
+	menuTitle: string;
 };
 const foodMenu: SelectOptionType[] = [
 	{ label: 'Conventional', value: 'conventional' },
@@ -46,6 +47,7 @@ const AttendeDetails = (props: Props) => {
 		textFieldRegisterType,
 		radioTitle,
 		allergieTextFieldTitle,
+		menuTitle,
 	} = props;
 
 	const watchAllergies = watch(radioRegisterType, 'false');
@@ -56,7 +58,7 @@ const AttendeDetails = (props: Props) => {
 			<DropDown
 				control={control}
 				registerType={dropdownRegisterType}
-				label={'Menu'}
+				label={menuTitle}
 				options={foodMenu}
 				placeHolder={'please select'}
 				register={register}
@@ -104,9 +106,7 @@ const Container = styled.div`
 	justify-content: space-between;
 	gap: 24px;
 	margin-bottom: 24px;
-	background-color: #c1b5a3;
 	border-radius: 12px;
-	padding: 12px;
 `;
 
 export default AttendeDetails;

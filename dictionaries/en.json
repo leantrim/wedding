@@ -33,7 +33,7 @@
     "lastName": "Lastname",
     "lastNameValidation": "Please enter your surname",
     "companion": "Will you bring companion?",
-    "transportTitle": "Transport",
+    "transportTitle": "Will you need transport service?",
     "transportValidation": "Transport is required",
     "yes": "Yes",
     "no": "No",
@@ -46,13 +46,14 @@
     "submitSuccess": "Thank you for submitting your RSVP",
     "transportTip": "click here for more info regarding transport",
     "radioValidation": "Please select an option",
-    "attendeAllergiesTitle": "Do you have allergies or intollerances?",
-    "specificAllergieQuestion": "Details for alergies and intollerances",
+    "attendeAllergiesTitle": "Allergies or intolerances?",
+    "specificAllergieQuestion": "Please specify the allergies or intolerances",
     "formAttendeDetailsTitle": "Details",
     "textFieldValidation": "Input cannot be empty",
-    "companionTitle": "ACCOMPANANTES",
+    "companionTitle": "Companion",
     "companionAllergiesTitle": "Detail the allergies or intolerances of the companion",
-    "companionNameTitle": "Companion name"
+    "companionNameTitle": "Name and surname of the companion",
+    "companionMenuTitle": "Menu companion"
   },
 
 
@@ -64,7 +65,7 @@
   },
 
   "transport": {
-    "title": "Will you need transport service?",
+    "title": "Transport",
     "schedule": "Schedule",
     "meetingPoint": "Meeting point: Mercat de Colom",
     "departure": "Departure",

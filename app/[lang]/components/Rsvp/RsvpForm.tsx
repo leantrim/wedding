@@ -198,7 +198,8 @@ const RsvpForm = (props: Props) => {
 							textFieldRegisterType={'allergiesDetails'}
 							title={form.formAttendeDetailsTitle}
 							radioTitle={form.attendeAllergiesTitle}
-							allergieTextFieldTitle={form.attendeAllergiesTitle}
+							allergieTextFieldTitle={form.specificAllergieQuestion}
+							menuTitle={'Menu'}
 						/>
 						<Companion
 							form={form}

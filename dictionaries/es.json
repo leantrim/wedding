@@ -29,8 +29,8 @@
     "firstNameValidation": "Su nombre",
     "lastName": "Apellido",
     "lastNameValidation": "Su apellido",
-    "companion": "¿Vienes con acompañante/s?",
-    "transportTitle": "Transporte",
+    "companion": "Viene von acompañante?",
+    "transportTitle": "Necesita transporte?",
     "transportValidation": "Necesita transporte?",
     "yes": "Si",
     "no": "No",
@@ -43,13 +43,14 @@
     "submitSuccess": "¡Gracias por enviar su formulario!",
     "transportTip": "haz clic aquí para obtener más información sobre el transporte",
     "radioValidation": "Please select an option",
-    "attendeAllergiesTitle": "¿Tiene alergias o intolerancias?",
-    "specificAllergieQuestion": "Detalle sus alergias o intolerancias",
+    "attendeAllergiesTitle": "Alergias o intolerancias?",
+    "specificAllergieQuestion": "Por favor especifique las alergias o intolerancias.",
     "formAttendeDetailsTitle": "Detalles",
     "textFieldValidation": "Input cannot be empty",
-    "companionTitle": "ACCOMPANANTES",
+    "companionTitle": "Acompañante",
     "companionAllergiesTitle": "Detalle las alergias o intolerancias del acompañante",
-    "companionNameTitle": "Nombre del acompanante"
+    "companionNameTitle": "Nombre y apellido del acompañante",
+    "companionMenuTitle": "Menú acompañante"
   },
   "present": {
     "title": "Tu mejor regalo, nuestra nueva vida juntos",
@@ -58,7 +59,7 @@
     "thankYou": "Gracias"
   },
   "transport": {
-    "title": "¿Necesitarás servicio de transporte?",
+    "title": "Transporte",
     "schedule": "Horario",
     "meetingPoint": "Punto de encuentro: Mercat de Colom",
     "departure": "Salida",

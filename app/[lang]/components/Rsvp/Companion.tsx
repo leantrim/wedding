@@ -36,14 +36,19 @@ const Companion = (props: Props) => {
 				title={form.companion}
 				firstOptionTitle={form.yes}
 				secondOptionTitle={form.no}
-				center
 			/>
 			{watchCompanion === 'true' && (
 				<CompanionContainer>
-					<SubTitle style={{ marginTop: '12px', marginLeft: '12px' }}>
-						{form.companionTitle}
-					</SubTitle>
+					<SubTitle>{form.companionTitle}</SubTitle>
 
+					<FieldContainer>
+						<TextField
+							errorMessage={errors}
+							register={register}
+							registerType={'companionName'}
+							title={form.companionNameTitle}
+						/>
+					</FieldContainer>
 					<AttendeDetails
 						control={control}
 						setValue={setValue}
@@ -56,16 +61,9 @@ const Companion = (props: Props) => {
 						radioRegisterType={'companionAllergies'}
 						dropdownRegisterType={'companionMenu'}
 						textFieldRegisterType={'companionAllergiesDetails'}
-						allergieTextFieldTitle={form.companionAllergiesTitle}
+						allergieTextFieldTitle={form.specificAllergieQuestion}
+						menuTitle={form.companionMenuTitle}
 					/>
-					<FieldContainer>
-						<TextField
-							errorMessage={errors}
-							register={register}
-							registerType={'companionName'}
-							title={form.companionNameTitle}
-						/>
-					</FieldContainer>
 				</CompanionContainer>
 			)}
 		</>
@@ -73,15 +71,15 @@ const Companion = (props: Props) => {
 };
 
 const FieldContainer = styled.div`
-	margin: 12px;
-	margin-top: 0px;
+	margin-top: 12px;
+	margin-bottom: 24px;
 `;
 
 const CompanionContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	background-color: #c1b5a3;
 	border-radius: 12px;
+	margin-top: 12px;
 `;
 
 export default Companion;

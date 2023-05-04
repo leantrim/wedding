@@ -6,7 +6,14 @@ const Footer = () => {
 		<Container>
 			<span>© 2023 - sepidehandgeorge.com</span>
 			<span>
-				Created by <a href='https://mediapartner.se'>mediapartners.se</a>
+				Created by{' '}
+				<a
+					href='https://www.instagram.com/mediapartners.se/'
+					target='_blank'
+					style={{ textDecoration: 'underline' }}
+				>
+					mediapartners.se
+				</a>
 			</span>
 		</Container>
 	);
@@ -18,6 +25,7 @@ const Container = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	padding-left: 12px;
 `;
 
 export default Footer;

@@ -80,6 +80,7 @@ export type FormType = {
 	companionTitle: string;
 	companionAllergiesTitle: string;
 	companionNameTitle: string;
+	companionMenuTitle: string;
 };
 
 export type CounterType = {
