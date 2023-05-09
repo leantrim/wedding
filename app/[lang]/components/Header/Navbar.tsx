@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBarsStaggered } from '@fortawesome/pro-light-svg-icons';
-import MenuList from './MenuList';
 import { AppShellDataContext } from '../../../context/appShellData';
 import { SiteConfig } from '../../config';
 import useCheckMobileScreen from '../../../hooks/isMobile';
 import { MenuType } from '../../../../types/DictionaryTypes';
 import MenuLink from '../common/MenuLink';
 import { MenusType } from '../../../../types/Menus';
+import Image from 'next/image';
+import LogoSvg from '/public/logo.svg';
 
 type Props = {
 	menu: MenuType;
@@ -47,14 +48,7 @@ const Navbar = (props: Props) => {
 			menuActive={menuActive}
 			isMobile={isMobile}
 		>
-			<div
-				style={{
-					marginLeft: 6,
-					color: !isVisible ? 'white' : SiteConfig.colors.secondary,
-				}}
-			>
-				SG
-			</div>
+			<Image src={LogoSvg.src} width={70} height={70} alt={'Logo'} />
 			{isMobile ? (
 				<FontAwesomeIcon
 					icon={faBarsStaggered}

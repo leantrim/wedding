@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { FormType } from '../../../../types/DictionaryTypes';
 import { MenusType } from '../../../../types/Menus';
@@ -24,6 +24,10 @@ const Rsvp = (props: Props) => {
 	const [formPosted, setFormPosted] = useState(false);
 	const [error, setError] = useState('');
 	const [isAttending, setIsAttending] = useState<boolean>(false);
+	const rsvpRef = useRef<null | HTMLDivElement>(null);
+
+	const executeScroll = () =>
+		rsvpRef.current?.scrollIntoView({ behavior: 'smooth' });
 
 	const onSubmit = async (data: RsvpFormData) => {
 		setFormPosted(true);
@@ -37,6 +41,8 @@ const Rsvp = (props: Props) => {
 			.catch((error) => {
 				setError(error.toString());
 			});
+
+		executeScroll();
 	};
 
 	useEffect(() => {
@@ -49,6 +55,7 @@ const Rsvp = (props: Props) => {
 			currentHeight={height}
 			formPosted={formPosted}
 			isAttending={isAttending}
+			ref={rsvpRef}
 		>
 			{!formPosted ? (
 				<RsvpForm

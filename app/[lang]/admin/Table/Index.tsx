@@ -14,6 +14,11 @@ import { SiteConfig } from '../../config';
 import useLocalStorage from '../../../hooks/useLocalStorage';
 import { collection, deleteDoc, doc } from 'firebase/firestore';
 import { database } from '../../../../lib/firebase';
+import Pagination from '../Pagination';
+import Body from './Body';
+import Header from './Header';
+import ShowMore from '../ShowMore';
+import NewForms from '../NewForms';
 
 type Props = {
 	form: RsvpFormData[];
@@ -59,7 +64,11 @@ function formatDateFromTimestamp(isoDateString: string) {
 	return `${formattedDate}`;
 }
 
-function RsvpList(props: Props) {
+export interface VisibleRsvp {
+	[key: string]: boolean;
+}
+
+function Index(props: Props) {
 	const { form } = props;
 
 	const [attendingFilter, setAttendingFilter] = useState<boolean | null>(null);
@@ -73,6 +82,8 @@ function RsvpList(props: Props) {
 	const [newFormSinceLastViewed, setNewFormSinceLastViewed] = useState(false);
 	const [newForms, setNewForms] = useState<RsvpFormData[]>([]);
 	const [showNewFormsOnly, setShowNewFormsOnly] = useState(false);
+	const [visibleRsvp, setVisibleRsvp] = useState<VisibleRsvp>({});
+	setVisibleRsvp;
 
 	useEffect(() => {
 		const itemsNotInTestForms = forms.filter((formItem) => {
@@ -104,7 +115,7 @@ function RsvpList(props: Props) {
 		const searchTermParts = searchTerm.toLowerCase().split(' ');
 
 		const searchInName = `${item.name} ${item.surname}`.toLowerCase();
-		const searchInCompanion = item.companion?.toLowerCase() || '';
+		const searchInCompanion = item.companionName?.toLowerCase() || '';
 
 		const nameMatches = searchTermParts.every((part) =>
 			searchInName.includes(part)
@@ -186,33 +197,13 @@ function RsvpList(props: Props) {
 	return (
 		<Container>
 			{newFormSinceLastViewed && (
-				<DisplayNewForms>
-					<div>
-						Great news, there are{' '}
-						<StyledNumber style={{ color: 'white' }}>
-							{newForms.length}
-						</StyledNumber>{' '}
-						new forms submitted since you last viewed!
-					</div>
-					<Button
-						onClick={() => {
-							setShowNewFormsOnly(!showNewFormsOnly);
-							setTestForms(forms);
-							clearFilters();
-						}}
-					>
-						{showNewFormsOnly ? 'Show All Forms' : 'Show New Form(s)'}
-					</Button>
-					<Button
-						onClick={() => {
-							setNewFormSinceLastViewed(false);
-							setTestForms(forms);
-							clearFilters();
-						}}
-					>
-						Dismiss
-					</Button>
-				</DisplayNewForms>
+				<NewForms
+					clearFilters={clearFilters}
+					newForms={newForms}
+					setNewFormSinceLastViewed={setNewFormSinceLastViewed}
+					setShowNewFormsOnly={setShowNewFormsOnly}
+					showNewFormsOnly={showNewFormsOnly}
+				/>
 			)}
 			<SearchDiv>
 				<div>
@@ -225,157 +216,46 @@ function RsvpList(props: Props) {
 						onChange={handleSearchTermChange}
 					/>
 				</div>
-				<ShowMoreContainer>
-					<label htmlFor='itemsPerPage'>
-						Items per page: <StyledNumber>{itemsPerPage}</StyledNumber>
-					</label>
-					{forms.length > paginatedForm.length && (
-						<Button onClick={() => setItemsPerPage(itemsPerPage + 10)}>
-							Show <StyledNumber>+10</StyledNumber> more
-						</Button>
-					)}
-					{itemsPerPage > 10 && (
-						<Button onClick={() => setItemsPerPage(itemsPerPage - 10)}>
-							Show <StyledNumber>-10</StyledNumber> less
-						</Button>
-					)}
-					<Button onClick={() => setItemsPerPage(forms.length)}>
-						Show all
-					</Button>
-				</ShowMoreContainer>
+				<ShowMore
+					forms={forms}
+					itemsPerPage={itemsPerPage}
+					paginatedForm={paginatedForm}
+					setItemsPerPage={setItemsPerPage}
+				/>
 			</SearchDiv>
 			<StyledTable>
-				<StyledHeader>
-					<StyledRow>
-						<StyledHead>Name</StyledHead>
-						<StyledHead>Companion</StyledHead>
-						<StyledHead>
-							Attendance
-							<Select
-								style={{ marginLeft: '12px' }}
-								value={
-									attendingFilter === null ? 'null' : attendingFilter.toString()
-								}
-								onChange={handleAttendingFilterChange}
-							>
-								<option value='null'>All</option>
-								<option value='true'>Yes</option>
-								<option value='false'>No</option>
-							</Select>
-						</StyledHead>
-						<StyledHead>
-							Transport
-							<Select
-								style={{ marginLeft: '12px' }}
-								value={
-									transportFilter === null ? 'null' : transportFilter.toString()
-								}
-								onChange={handleTransportFilterChange}
-							>
-								<option value='null'>All</option>
-								<option value='true'>Yes</option>
-								<option value='false'>No</option>
-							</Select>
-						</StyledHead>
-						<StyledHead>
-							Date{' '}
-							<Button onClick={toggleSortOrder}>
-								{dateSortDescending ? '▲' : '▼'}
-							</Button>
-						</StyledHead>
-						<StyledHead>
-							<h4>Action</h4>
-						</StyledHead>
-					</StyledRow>
-				</StyledHeader>
-				<tbody>
-					{paginatedForm.map((item) => (
-						<StyledRow key={item.id}>
-							<StyledCell>
-								{highlightSearchTerm(
-									`${item.name} ${item.surname}`,
-									searchTerm
-								)}
-							</StyledCell>
-							<StyledCell>
-								{item.companion &&
-									highlightSearchTerm(item.companion, searchTerm)}
-							</StyledCell>
-							<StyledCell>
-								{item.attendance === 'true' ? 'Yes' : 'No'}
-							</StyledCell>
-							<StyledCell>
-								{item.transport === 'true' ? 'Yes' : 'No'}
-							</StyledCell>
-							<StyledCell>{formatDateFromTimestamp(item.date!)}</StyledCell>
-							<StyledCell>
-								<Button onClick={() => handleDeleteForm(item.id!)}>
-									Delete
-								</Button>
-							</StyledCell>
-						</StyledRow>
-					))}
-				</tbody>
+				<Header
+					attendingFilter={attendingFilter}
+					dateSortDescending={dateSortDescending}
+					handleAttendingFilterChange={handleAttendingFilterChange}
+					handleTransportFilterChange={handleTransportFilterChange}
+					toggleSortOrder={toggleSortOrder}
+					transportFilter={transportFilter}
+				/>
+				<Body
+					formatDateFromTimestamp={formatDateFromTimestamp}
+					handleDeleteForm={handleDeleteForm}
+					handleSearchTermChange={handleSearchTermChange}
+					highlightSearchTerm={highlightSearchTerm}
+					paginatedForm={paginatedForm}
+					searchTerm={searchTerm}
+				/>
 			</StyledTable>
-			<PaginationContainer>
-				{Array.from(
-					{ length: Math.ceil(filteredForm.length / itemsPerPage) },
-					(_, index) => (
-						<Button
-							key={index}
-							onClick={() => handlePageChange(index + 1)}
-							style={{
-								marginRight: '12px',
-								background: index + 1 === currentPage ? 'lightblue' : 'white',
-							}}
-						>
-							{index + 1}
-						</Button>
-					)
-				)}
-			</PaginationContainer>
+			<Pagination
+				currentPage={currentPage}
+				filteredFormLength={filteredForm.length}
+				itemsPerPage={itemsPerPage}
+				handlePageChange={handlePageChange}
+			/>
 		</Container>
 	);
 }
 
-const ShowMoreContainer = styled.div`
-	display: flex;
-	gap: 24px;
-`;
-
-const StyledNumber = styled.span`
+export const StyledNumber = styled.span`
 	font-weight: bold;
 `;
 
-const PaginationContainer = styled.div`
-	padding: 12px 0;
-`;
-
-const DisplayNewForms = styled.div`
-	background-color: #62ce62;
-	padding: 12px;
-	margin-top: 12px;
-	border-radius: 8px;
-	font-weight: bold;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	gap: 12px;
-`;
-
-const Select = styled.select`
-	background-color: ${SiteConfig.colors.primary};
-	border: 2px solid ${SiteConfig.colors.primaryDarker};
-
-	&:hover {
-		background-color: ${SiteConfig.colors.primaryDarker};
-		border: 2px solid ${SiteConfig.colors.primaryDarker};
-		cursor: pointer;
-	}
-`;
-
-const Button = styled.button`
+export const Button = styled.button`
 	background-color: ${SiteConfig.colors.primary};
 	border: 2px solid ${SiteConfig.colors.primaryDarker};
 	color: black;
@@ -408,4 +288,4 @@ const Container = styled.div`
 	flex-direction: column;
 `;
 
-export default RsvpList;
+export default Index;

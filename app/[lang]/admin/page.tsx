@@ -2,14 +2,14 @@ import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import React from 'react';
 import { database } from '../../../lib/firebase';
 import Stats from './Stats';
-import RsvpList from './Table/RsvpList';
+import Index from './Table/Index';
 import StyledComponentsRegistry from '../lib/registry';
-import { SiteConfig } from '../config';
+import { Roboto } from 'next/font/google';
 
 export const dynamic = 'force-dynamic';
 
 const dbInstance = collection(database, 'forms');
-const AUTH_KEY = '5U68DWOT9K5pF8TT53pTobAKUsQSmMlUzN8VIji4';
+const AUTH_KEY = process.env.DB_AUTH_KEY;
 
 async function fetchData() {
 	return await getDocs(dbInstance).then((querySnapshot) => {
@@ -21,6 +21,8 @@ async function fetchData() {
 	});
 }
 
+const roboto = Roboto({ weight: '400', subsets: ['latin'] });
+
 export default async function Page({ params, searchParams }: any) {
 	const data = await fetchData();
 
@@ -29,7 +31,7 @@ export default async function Page({ params, searchParams }: any) {
 	}
 
 	return (
-		<>
+		<div className={roboto.className}>
 			<StyledComponentsRegistry>
 				<div style={{ paddingBottom: '48px' }}>
 					<div
@@ -43,9 +45,9 @@ export default async function Page({ params, searchParams }: any) {
 						Admin Panel - Forms
 					</div>
 					<Stats forms={data} />
-					<RsvpList form={data} />
+					<Index form={data} />
 				</div>
 			</StyledComponentsRegistry>
-		</>
+		</div>
 	);
 }

@@ -6,7 +6,7 @@ export type RsvpFormData = {
 	allergies?: BooleanStringValue;
 	allergiesDetails?: string;
 	menu?: Menu;
-	id?: string;
+	id: string;
 	date?: string;
 	companion?: BooleanStringValue;
 	companionAllergies?: BooleanStringValue;

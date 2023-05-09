@@ -11,7 +11,11 @@ const Stats = (props: Props) => {
 	const { forms } = props;
 
 	const peopleAttending = forms.reduce((acc, curr) => {
+		console.log(curr.companion);
 		if (curr.attendance === 'true') {
+			acc += 1;
+		}
+		if (curr.companion) {
 			acc += 1;
 		}
 		return acc;

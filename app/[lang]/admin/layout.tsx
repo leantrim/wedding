@@ -14,16 +14,14 @@ export const metadata = {
 	},
 };
 
-const roboto = Roboto({ weight: '400', subsets: ['latin'] });
-
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' className={roboto.className}>
-			<body className={roboto.className}>{children}</body>
+		<html lang='en'>
+			<body>{children}</body>
 		</html>
 	);
 }
