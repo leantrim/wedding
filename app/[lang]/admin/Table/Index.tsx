@@ -40,9 +40,7 @@ const highlightSearchTerm = (text: string, searchTerm: string) => {
 	return (
 		<>
 			{beforeSearchTerm}
-			<span style={{ backgroundColor: 'yellow', fontWeight: 'bold' }}>
-				{searchTermText}
-			</span>
+			<span style={{ fontWeight: 'bold' }}>{searchTermText}</span>
 			{afterSearchTerm}
 		</>
 	);
@@ -75,19 +73,16 @@ function Index(props: Props) {
 	const [transportFilter, setTransportFilter] = useState<boolean | null>(null);
 	const [dateSortDescending, setSortDescending] = useState(true);
 	const [forms, setForms] = useState<RsvpFormData[]>(form);
-	const [testForms, setTestForms] = useLocalStorage('forms', []);
 	const [searchTerm, setSearchTerm] = useState('');
 	const [currentPage, setCurrentPage] = useState(1);
 	const [itemsPerPage, setItemsPerPage] = useState(20);
 	const [newFormSinceLastViewed, setNewFormSinceLastViewed] = useState(false);
-	const [newForms, setNewForms] = useState<RsvpFormData[]>([]);
+	const [newForms, setNewForms] = useLocalStorage('forms', []);
 	const [showNewFormsOnly, setShowNewFormsOnly] = useState(false);
-	const [visibleRsvp, setVisibleRsvp] = useState<VisibleRsvp>({});
-	setVisibleRsvp;
 
 	useEffect(() => {
 		const itemsNotInTestForms = forms.filter((formItem) => {
-			return !testForms.some(
+			return !newForms.some(
 				(testFormItem: RsvpFormData) => testFormItem.id === formItem.id
 			);
 		});
@@ -97,7 +92,7 @@ function Index(props: Props) {
 			setNewFormSinceLastViewed(true);
 			setNewForms(itemsNotInTestForms);
 		}
-	}, [forms, testForms]);
+	}, []);
 
 	const handleSearchTermChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(event.target.value);
@@ -111,36 +106,38 @@ function Index(props: Props) {
 
 	const formsToFilter = showNewFormsOnly ? newForms : sortedForms;
 
-	const filteredForm: RsvpFormData[] = formsToFilter.filter((item) => {
-		const searchTermParts = searchTerm.toLowerCase().split(' ');
+	const filteredForm: RsvpFormData[] = formsToFilter.filter(
+		(item: RsvpFormData) => {
+			const searchTermParts = searchTerm.toLowerCase().split(' ');
 
-		const searchInName = `${item.name} ${item.surname}`.toLowerCase();
-		const searchInCompanion = item.companionName?.toLowerCase() || '';
+			const searchInName = `${item.name} ${item.surname}`.toLowerCase();
+			const searchInCompanion = item.companionName?.toLowerCase() || '';
 
-		const nameMatches = searchTermParts.every((part) =>
-			searchInName.includes(part)
-		);
-		const companionMatches = searchTermParts.every((part) =>
-			searchInCompanion.includes(part)
-		);
+			const nameMatches = searchTermParts.every((part) =>
+				searchInName.includes(part)
+			);
+			const companionMatches = searchTermParts.every((part) =>
+				searchInCompanion.includes(part)
+			);
 
-		if (
-			attendingFilter !== null &&
-			item.attendance !== attendingFilter.toString()
-		) {
-			return false;
+			if (
+				attendingFilter !== null &&
+				item.attendance !== attendingFilter.toString()
+			) {
+				return false;
+			}
+			if (
+				transportFilter !== null &&
+				item.transport !== transportFilter.toString()
+			) {
+				return false;
+			}
+			if (!nameMatches && !companionMatches) {
+				return false;
+			}
+			return true;
 		}
-		if (
-			transportFilter !== null &&
-			item.transport !== transportFilter.toString()
-		) {
-			return false;
-		}
-		if (!nameMatches && !companionMatches) {
-			return false;
-		}
-		return true;
-	});
+	);
 
 	const startIndex = (currentPage - 1) * itemsPerPage;
 	const endIndex = startIndex + itemsPerPage;

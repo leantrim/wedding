@@ -11,12 +11,11 @@ const Stats = (props: Props) => {
 	const { forms } = props;
 
 	const peopleAttending = forms.reduce((acc, curr) => {
-		console.log(curr.companion);
 		if (curr.attendance === 'true') {
 			acc += 1;
-		}
-		if (curr.companion) {
-			acc += 1;
+			if (curr.companion === 'true') {
+				acc += 1;
+			}
 		}
 		return acc;
 	}, 0);
@@ -30,14 +29,48 @@ const Stats = (props: Props) => {
 	const peopleNeedTransport = forms.reduce((acc, curr) => {
 		if (curr.transport === 'true') {
 			acc += 1;
+			if (curr.companion === 'true') {
+				acc += 1;
+			}
 		}
 		return acc;
 	}, 0);
+
+	const vegeterians = forms.reduce((acc, curr) => {
+		if (curr.attendance === 'true') {
+			if (curr.menu === 'vegetarian') {
+				acc += 1;
+			}
+			if (curr.companion === 'true' && curr.companionMenu === 'vegetarian') {
+				acc += 1;
+			}
+		}
+
+		return acc;
+	}, 0);
+
+	const conventionals = forms.reduce((acc, curr) => {
+		if (curr.attendance === 'true') {
+			if (curr.menu === 'conventional') {
+				acc += 1;
+			}
+			if (curr.companion === 'true' && curr.companionMenu === 'conventional') {
+				acc += 1;
+			}
+		}
+
+		return acc;
+	}, 0);
+
 	return (
 		<Container>
-			<DisplayStats>People attending: {peopleAttending}</DisplayStats>
+			<DisplayStats>
+				People attending (including companion): {peopleAttending}
+			</DisplayStats>
 			<DisplayStats>People Not attending: {peopleNotAttending}</DisplayStats>
 			<DisplayStats>Need Transport: {peopleNeedTransport}</DisplayStats>
+			<DisplayStats>Conventionals: {conventionals}</DisplayStats>
+			<DisplayStats>Vegeterians: {vegeterians}</DisplayStats>
 			<DisplayStats>Total Forms Submitted: {forms.length}</DisplayStats>
 		</Container>
 	);
@@ -58,6 +91,7 @@ const Container = styled.div`
 		flex-direction: column;
 	}
 	font-weight: bold;
+	font-size: 14px;
 `;
 
 export default Stats;

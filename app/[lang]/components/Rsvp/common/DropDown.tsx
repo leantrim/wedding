@@ -48,12 +48,12 @@ const DropDown = (props: Props) => {
 		register(registerType);
 	}, [register]);
 
-	useEffect(() => {
-		if (!initated) {
-			setValue(registerType, 'conventional');
-			setInitated(true);
-		}
-	});
+	// useEffect(() => {
+	// 	if (!initated) {
+	// 		setValue(registerType, 'conventional');
+	// 		setInitated(true);
+	// 	}
+	// }, []);
 
 	return (
 		<DropDownContainer>

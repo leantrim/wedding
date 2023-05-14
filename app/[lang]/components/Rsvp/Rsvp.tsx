@@ -30,6 +30,13 @@ const Rsvp = (props: Props) => {
 		rsvpRef.current?.scrollIntoView({ behavior: 'smooth' });
 
 	const onSubmit = async (data: RsvpFormData) => {
+		if (!data.menu) {
+			data.menu = 'conventional';
+		}
+		if (!data.companionMenu) {
+			data.companionMenu = 'conventional';
+		}
+		console.log(data);
 		setFormPosted(true);
 
 		addDoc(dbInstance, {

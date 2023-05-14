@@ -9,7 +9,7 @@ import { Roboto } from 'next/font/google';
 export const dynamic = 'force-dynamic';
 
 const dbInstance = collection(database, 'forms');
-const AUTH_KEY = process.env.DB_AUTH_KEY;
+const AUTH_KEY = '5U68DWOT9K5pF8TT53pTobAKUsQSmMlUzN8VIji4';
 
 async function fetchData() {
 	return await getDocs(dbInstance).then((querySnapshot) => {

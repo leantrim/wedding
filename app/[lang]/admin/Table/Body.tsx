@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 import { RsvpFormData } from '../../../../types/Form';
+import { Title } from '../../components/WhenAndWhere/WhenAndWhere';
 import { Button } from './Index';
 import { StyledCell, StyledRow } from './StyledTable';
 
@@ -53,15 +54,59 @@ const Body = (props: Props) => {
 						</StyledCell>
 					</StyledRow>
 					{!!visibleRsvp[item.id] && (
-						<StyledRow>
-							<div>something</div>
-						</StyledRow>
+						<div>
+							<DetailsContainer>
+								{item.companionName && (
+									<AttendeeContainer>
+										<Title>Companion Details</Title>
+										<div>
+											Companion: <b>{item.companionName}</b>
+										</div>
+										<div>
+											Menu: <b>{item.companionMenu?.toLocaleUpperCase()}</b>
+										</div>
+										{item.companionAllergies === 'true' && (
+											<div>
+												Allergies: <b>{item.companionAllergiesDetails}</b>
+											</div>
+										)}
+									</AttendeeContainer>
+								)}
+								<AttendeeContainer>
+									<Title>Attendee Details</Title>
+									<div>
+										Name: <b>{item.name}</b>
+									</div>
+									<div>
+										Menu: <b>{item.companionMenu?.toLocaleUpperCase()}</b>
+									</div>
+									{item.allergies === 'true' && (
+										<div>
+											Allergies: <b>{item.allergiesDetails}</b>
+										</div>
+									)}
+								</AttendeeContainer>
+							</DetailsContainer>
+						</div>
 					)}
 				</React.Fragment>
 			))}
 		</Tbody>
 	);
 };
+
+const AttendeeContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 12px;
+`;
+
+const DetailsContainer = styled.div`
+	margin: 24px;
+	display: flex;
+	justify-content: space-around;
+`;
 
 const Tbody = styled.tbody``;
 
