@@ -53,7 +53,9 @@
     "companionTitle": "Companion",
     "companionAllergiesTitle": "Detail the allergies or intolerances of the companion",
     "companionNameTitle": "Name and surname of the companion",
-    "companionMenuTitle": "Menu companion"
+    "companionMenuTitle": "Menu companion",
+    "conventionalTitle": "Conventional",
+    "vegeterianTitle": "Vegeterian"
   },
 
 

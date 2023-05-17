@@ -81,6 +81,8 @@ export type FormType = {
 	companionAllergiesTitle: string;
 	companionNameTitle: string;
 	companionMenuTitle: string;
+	conventionalTitle: string;
+	vegeterianTitle: string;
 };
 
 export type CounterType = {

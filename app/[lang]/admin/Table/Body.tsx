@@ -78,7 +78,7 @@ const Body = (props: Props) => {
 										Name: <b>{item.name}</b>
 									</div>
 									<div>
-										Menu: <b>{item.companionMenu?.toLocaleUpperCase()}</b>
+										Menu: <b>{item.menu?.toLocaleUpperCase()}</b>
 									</div>
 									{item.allergies === 'true' && (
 										<div>

@@ -29,7 +29,7 @@
     "firstNameValidation": "Su nombre",
     "lastName": "Apellido",
     "lastNameValidation": "Su apellido",
-    "companion": "Viene von acompañante?",
+    "companion": "Viene con acompañante?",
     "transportTitle": "Necesita transporte?",
     "transportValidation": "Necesita transporte?",
     "yes": "Si",
@@ -50,7 +50,9 @@
     "companionTitle": "Acompañante",
     "companionAllergiesTitle": "Detalle las alergias o intolerancias del acompañante",
     "companionNameTitle": "Nombre y apellido del acompañante",
-    "companionMenuTitle": "Menú acompañante"
+    "companionMenuTitle": "Menú acompañante",
+    "conventionalTitle": "Convencional",
+    "vegeterianTitle": "Vegetariano"
   },
   "present": {
     "title": "Tu mejor regalo, nuestra nueva vida juntos",

@@ -28,10 +28,6 @@ type Props = {
 	allergieTextFieldTitle: string;
 	menuTitle: string;
 };
-const foodMenu: SelectOptionType[] = [
-	{ label: 'Conventional', value: 'conventional' },
-	{ label: 'Vegetariano', value: 'vegetarian' },
-];
 
 const AttendeDetails = (props: Props) => {
 	const {
@@ -51,6 +47,11 @@ const AttendeDetails = (props: Props) => {
 	} = props;
 
 	const watchAllergies = watch(radioRegisterType, 'false');
+
+	const foodMenu: SelectOptionType[] = [
+		{ label: form.conventionalTitle, value: 'conventional' },
+		{ label: form.vegeterianTitle, value: 'vegetarian' },
+	];
 
 	return (
 		<Container>
