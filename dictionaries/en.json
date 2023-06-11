@@ -39,7 +39,7 @@
     "no": "No",
     "submitLabel": "submit",
     "attendanceTitle": "Will you be joining us?",
-    "attendanceValidation": "Please confirm your attendance",          
+    "attendanceValidation": "Please confirm your attendance",
     "attendingText": "We are happy to celebrate our big day with you!",
     "notAttendingText": "Too bad you are not coming, but that means more drinks for the rest 😛",
     "submitError": "Something went wrong, please refresh the page and if that dont work contact Sepideh or George immidietly.",
@@ -58,7 +58,6 @@
     "vegeterianTitle": "Vegeterian"
   },
 
-
   "present": {
     "title": "Your best gift, our new life together",
     "text": "We don't want to offend but we have it, all household goods and so much more. To save you shopping, sit back and rest, a gift of currency is our request. Don't go overboard or rob any banks, any little thing will make us smile with thanks.",
@@ -75,11 +74,11 @@
   },
   "ourStory": {
     "title": "Our story",
-    "text":"We met for the first time in September 2021 at a nightclub in Barcelona. As you know, we love to enjoy the nightlife, and love arose without looking for it. We didn't talk much that night, but George appeared in my DMs on Instagram, however things didn't go much further. In December 2021 we were both invited to a friend's birthday party and casually we ran into each other again. That night our connection grew and we started hanging out more, but things were going nowhere. If you ask George, he tried very hard to capture my interest, but I was playing hard to get. If you ask me, he wasn't really doing anything to stand out. After a while things changed, we started dating more and fell in love, and soon after we moved in together. One year, a few trips, a grief and many celebrations and experiences later, in December 2022 in Paris, the city of love, he went down on one knee on a boat on the Seine (yes, super romantic), holding the most beautiful ring, asking me to marry him. It had never been easier for me to say YES before. Mixing our four different cultures, with very different previous experiences and lifestyles, it hasn't always been easy to agree on things, but we keep learning and our love continues to grow. Now, we can't wait to start our lives as husband and wife."
+    "text": "We met for the first time in September 2021 at a nightclub in Barcelona. As you know, we love to enjoy the nightlife, and love arose without looking for it. We didn't talk much that night, but George appeared in my DMs on Instagram, however things didn't go much further. In December 2021 we were both invited to a friend's birthday party and casually we ran into each other again. That night our connection grew and we started hanging out more, but things were going nowhere. If you ask George, he tried very hard to capture my interest, but I was playing hard to get. If you ask me, he wasn't really doing anything to stand out. After a while things changed, we started dating more and fell in love, and soon after we moved in together. One year, a few trips, a grief and many celebrations and experiences later, in December 2022 in Paris, the city of love, he went down on one knee on a boat on the Seine (yes, super romantic), holding the most beautiful ring, asking me to marry him. It had never been easier for me to say YES before. Mixing our four different cultures, with very different previous experiences and lifestyles, it hasn't always been easy to agree on things, but we keep learning and our love continues to grow. Now, we can't wait to start our lives as husband and wife."
   },
   "recommendations": {
     "importantInfoTitle": "Important information",
-    "dressText": "Dress code: Black tie. We kindly ask you to avoid the colors white and black",
+    "dressText": "Dress code: Black tie. We kindly ask women to avoid the colors black and white",
     "adultsOnlyText": "We love children, but this day we want to share with adults",
     "hotel": {
       "title": "Hotels",
@@ -89,18 +88,19 @@
     },
     "hotelsList": [
       {
-      "name": "Hotel Barcelona catedral",
-      "description": "This is a four-star hotel with a pool and excellent views in the heart of Barcelona",
-      "googleMapsLink": "https://www.google.com/maps/dir//Hotel+Barcelona+Catedral,+Carrer+dels+Capellans,+Barcelona,+Spanien/@41.3848067,2.1400929,13z/data=!3m1!5s0x12a4a25c3d57737b:0x679ccf9f45263e2c!4m8!4m7!1m0!1m5!1m1!1s0x12a4a2f9ef4e1c99:0xf537fa5f9cae2874!2m2!1d2.1750735!2d41.3848",
-      "reservationLink": "https://www.barcelonacatedral.com/en/",
-      "voucherCode": "Bcncat"
-    },
-    {
-      "name": "Hotel Barcelona universal",
-      "description": "Located near the beach, in the heart of the city",
-      "reservationLink": "https://www.hotelbarcelonauniversal.com/en/",
-      "googleMapsLink": "https://www.google.com/maps/dir//hotel+barcelona+universal/@48.1716732,-1.3516858,5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12a4a25c16151bcf:0xb0f5d677cd65f257!2m2!1d2.1683286!2d41.3752385",
-      "voucherCode": "WEDDINGSANDG"
-    }]
+        "name": "Hotel Barcelona catedral",
+        "description": "This is a four-star hotel with a pool and excellent views in the heart of Barcelona",
+        "googleMapsLink": "https://www.google.com/maps/dir//Hotel+Barcelona+Catedral,+Carrer+dels+Capellans,+Barcelona,+Spanien/@41.3848067,2.1400929,13z/data=!3m1!5s0x12a4a25c3d57737b:0x679ccf9f45263e2c!4m8!4m7!1m0!1m5!1m1!1s0x12a4a2f9ef4e1c99:0xf537fa5f9cae2874!2m2!1d2.1750735!2d41.3848",
+        "reservationLink": "https://www.barcelonacatedral.com/en/",
+        "voucherCode": "Bcncat"
+      },
+      {
+        "name": "Hotel Barcelona universal",
+        "description": "Located near the beach, in the heart of the city",
+        "reservationLink": "https://www.hotelbarcelonauniversal.com/en/",
+        "googleMapsLink": "https://www.google.com/maps/dir//hotel+barcelona+universal/@48.1716732,-1.3516858,5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12a4a25c16151bcf:0xb0f5d677cd65f257!2m2!1d2.1683286!2d41.3752385",
+        "voucherCode": "WEDDINGSANDG"
+      }
+    ]
   }
 }
